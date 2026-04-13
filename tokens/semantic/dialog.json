@@ -1,0 +1,121 @@
+{
+  "text": {
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "popup": "{color.primary.neutral}"
+    }
+  },
+  "background": {
+    "default": "{color.standard.white}",
+    "overlay": "rgba(0, 0, 0, 0.4)"
+  },
+  "border": {
+    "default": "none",
+    "radius": "{radius.xl}",
+    "width": "1px",
+    "color": {
+      "subtle": "{color.neutral.purple|mix:5:white}",
+      "light": "{color.primary.neutral|mix:8:white}"
+    }
+  },
+  "padding": {
+    "container": "0 0 0.5rem 0",
+    "none": "0"
+  },
+  "maxheight": "100%",
+  "position": {
+    "default": "static"
+  },
+  "header": {
+    "background": {
+      "default": "{color.secondary.purple|mix:8:white}",
+      "clear": "{color.standard.white}",
+      "popup": "{color.standard.white}"
+    },
+    "border": {
+      "radius": {
+        "top": "{radius.xl} {radius.xl} 0 0"
+      },
+      "bottom": {
+        "width": "1px",
+        "color": "{color.primary.neutral|mix:8:white}"
+      }
+    },
+    "height": {
+      "default": "3rem",
+      "auto": "auto"
+    },
+    "padding": {
+      "default": "0.75rem 0.75rem 0.75rem 1rem",
+      "none": "0",
+      "popupheaderaction":"0.3rem"
+    },
+    "gap": {
+      "default": "0.75rem",
+      "none": "0"
+    }
+  },
+  "title": {
+    "color": {
+      "default": "{color.secondary.purple|mix:60:black}",
+      "popup": "{color.primary.neutral}"
+    }
+  },
+  "closebutton": {
+    "color": {
+      "default": "{color.primary.purple|mix:80:black}"
+    },
+    "background": {
+      "default": "transparent",
+      "hover": "{color.primary.purple|mix:10:white}"
+    },
+    "border": "none",
+    "icon": {
+      "fontsize": "1.5rem"
+    },
+    "height":"2rem",
+    "justifycontent":"flex-end"
+  },
+  "maximizebutton": {
+    "background": {
+      "default": "transparent",
+      "hover": "{color.primary.purple|mix:10:white}"
+    },
+    "border": "none"
+  },
+  "headeractions": {
+    "gap": "0.5rem "
+  },
+  "content": {
+    "background": "transparent",
+    "padding": {
+      "default": "{spacing.5}",
+      "popup": "0.5rem 1rem",
+      "popupmodal": "0.75rem 1rem",
+      "none": "0"
+    },
+    "display": "block"
+  },
+  "footer": {
+    "background": "transparent",
+    "border": {
+      "top": {
+        "width": "1px",
+        "color": "{color.standard.white}"
+      }
+    },
+    "padding": {
+      "default": "0.75rem 1rem 0.5rem 1rem",
+      "popup": "0.5rem 1rem",
+      "popupmodal": "0.75rem 1rem 0.5rem 1rem"
+    },
+    "gap": "0.75rem",
+    "display": "flex",
+    "flexwrap": "wrap"
+  },
+  "overlaymask": {
+    "pointerevents": {
+      "default": "auto"
+    }
+  }
+}

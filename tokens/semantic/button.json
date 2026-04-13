@@ -1,0 +1,245 @@
+{
+  "base": {
+    "border": "0",
+    "borderradius": "0.5rem",
+    "fontsize": "0.875rem",
+    "padding": "0",
+    "transition": "background-color 300ms ease-out"
+  },
+  "icon": {
+    "fontsize": "1.25rem",
+    "height": "1.25rem",
+    "width": "1.25rem",
+    "lineheight": "1.1875rem",
+    "alignitems": "center",
+    "display": "flex",
+    "justifycontent": "center"
+  },
+  "disabled": {
+    "backgroundcolor": "{color.primary.neutral|mix:5:white}",
+    "color": "{color.primary.neutral|mix:25:white}",
+    "bordercolor": "{color.primary.neutral|mix:25:white}"
+  },
+  "buttoncontainer": {
+    "flex": "1 0 auto"
+  },
+  "primary": {
+    "backgroundcolor": {
+      "default": "{color.primary.purple|mix:80:black}",
+      "pressed": "{color.primary.purple|mix:60:black}",
+      "loading": "{color.primary.purple|mix:60:black}",
+      "hover": "{color.primary.purple|mix:60:black}",
+      "active": "{color.primary.purple|mix:50:black}",
+      "disabled": "{color.primary.neutral|mix:10:white}"
+    },
+    "color": {
+      "default": "{color.standard.white}",
+      "disabled": "{color.primary.neutral|mix:60:white}"
+    },
+    "spliticon": {
+      "borderleft": {
+        "default": "1px solid {color.primary.purple|mix:90:black}",
+        "disabled": "1px solid {color.primary.neutral|mix:25:white}"
+      }
+    },
+    "focus": {
+      "outline": "1px solid {color.primary.purple|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "secondary": {
+    "backgroundcolor": {
+      "default": "{color.standard.white}",
+      "pressed": "{color.standard.white}",
+      "loading": "{color.standard.white}",
+      "hover": "{color.primary.purple|mix:5:white}",
+      "active": "{color.secondary.purple|mix:30:white}",
+      "disabled": "{color.primary.neutral|mix:5:white}"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "pressed": "{color.secondary.purple|mix:80:black}",
+      "loading": "{color.secondary.purple|mix:80:black}",
+      "active": "{color.neutral.purple|mix:60:black}",
+      "disabled": "{color.primary.neutral|mix:25:white}"
+    },
+    "border": {
+      "default": "1px solid {color.neutral.purple|mix:25:white}",
+      "pressed": "1px solid {color.neutral.purple|mix:25:white}",
+      "loading": "1px solid {color.neutral.purple|mix:25:white}",
+      "active": "1px solid {color.neutral.purple|mix:50:white}"
+    },
+    "pollyicon": {
+      "color": {
+        "default": "{color.primary.neutral|mix:90:white}",
+        "pressed": "{color.secondary.purple|mix:80:black}",
+        "loading": "{color.secondary.purple|mix:80:black}",
+        "active": "{color.secondary.purple|mix:80:black}",
+        "disabled": "{color.primary.neutral|mix:25:white}"
+      }
+    },
+    "spliticon": {
+      "borderleft": {
+        "default": "1px solid {color.neutral.purple|mix:25:white}",
+        "active": "1px solid {color.neutral.purple|mix:50:white}",
+        "disabled": "1px solid {color.primary.neutral|mix:25:white}"
+      }
+    },
+    "focus": {
+      "outline": "1px solid {color.primary.neutral|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "tertiary": {
+    "backgroundcolor": {
+      "default": "transparent",
+      "pressed": "{color.primary.neutral|mix:5:white}",
+      "loading": "{color.primary.neutral|mix:5:white}",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "active": "{color.neutral.purple|mix:25:white}",
+      "disabled": "{color.primary.neutral|mix:10:white}"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "pressed": "{color.secondary.purple|mix:60:black}",
+      "loading": "{color.secondary.purple|mix:60:black}",
+      "disabled": "{color.primary.neutral|mix:40:white}"
+    },
+    "pollyicon": {
+      "color": {
+        "default": "{color.primary.neutral|mix:90:white}",
+        "pressed": "{color.secondary.purple|mix:80:black}",
+        "loading": "{color.secondary.purple|mix:80:black}"
+      }
+    },
+    "spliticon": {
+      "borderleft": {
+        "default": "1px solid {color.primary.neutral|mix:25:white}",
+        "active": "1px solid {color.neutral.purple|mix:50:white}",
+        "disabled": "1px solid {color.primary.neutral|mix:25:white}"
+      }
+    },
+    "focus": {
+      "outline": "1px solid {color.primary.neutral|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "elevated": {
+    "backgroundcolor": {
+      "default": "{color.standard.white}",
+      "pressed": "{color.secondary.purple|mix:15:white}",
+      "loading": "{color.secondary.purple|mix:15:white}",
+      "hover": "{color.primary.purple|mix:5:white}",
+      "active": "{color.secondary.purple|mix:30:white}",
+      "disabled": "{color.primary.neutral|mix:5:white}"
+    },
+    "color": {
+      "pressed": "{color.secondary.purple|mix:60:black}",
+      "loading": "{color.secondary.purple|mix:60:black}",
+      "disabled": "{color.primary.neutral|mix:40:white}"
+    },
+    "boxshadow": {
+      "default": "{elevation.md}",
+      "disabled": "none"
+    },
+    "pollyicon": {
+      "color": {
+        "default": "{color.secondary.purple|mix:80:black}",
+        "pressed": "{color.secondary.purple|mix:80:black}",
+        "loading": "{color.secondary.purple|mix:80:black}",
+        "disabled": "{color.primary.neutral|mix:40:white}"
+      }
+    },
+    "spliticon": {
+      "borderleft": {
+        "default": "1px solid {color.neutral.purple|mix:25:white}",
+        "pressed": "1px solid {color.neutral.purple|mix:40:white}",
+        "loading": "1px solid {color.neutral.purple|mix:40:white}",
+        "disabled": "1px solid {color.primary.neutral|mix:25:white}"
+      }
+    },
+    "focus": {
+      "outline": "1px solid {color.primary.neutral|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "tonal": {
+    "backgroundcolor": {
+      "default": "{color.secondary.purple|mix:15:white}",
+      "pressed": "{color.secondary.purple|mix:15:white}",
+      "loading": "{color.secondary.purple|mix:15:white}",
+      "hover": "{color.secondary.purple|mix:25:white}",
+      "selected": "{color.secondary.purple|mix:40:white}",
+      "active": "{color.secondary.purple|mix:40:white}",
+      "disabled": "{color.primary.neutral|mix:5:white}"
+    },
+    "color": {
+      "default": "{color.secondary.purple|mix:60:black}",
+      "pressed": "{color.secondary.purple|mix:60:black}",
+      "loading": "{color.secondary.purple|mix:60:black}",
+      "hover": "{color.secondary.purple|mix:80:black}",
+      "selected": "{color.neutral.purple|mix:60:black}",
+      "active": "{color.neutral.purple|mix:60:black}",
+      "disabled": "{color.primary.neutral|mix:40:white}"
+    },
+    "pollyicon": {
+      "color": {
+        "default": "{color.secondary.purple|mix:80:black}",
+        "pressed": "{color.secondary.purple|mix:80:black}",
+        "loading": "{color.secondary.purple|mix:80:black}",
+        "hover": "{color.secondary.purple|mix:60:black}",
+        "selected": "{color.neutral.purple|mix:80:black}",
+        "active": "{color.neutral.purple|mix:80:black}",
+        "disabled": "{color.primary.neutral|mix:40:white}"
+      }
+    },
+    "spliticon": {
+      "borderleft": {
+        "default": "1px solid {color.neutral.purple|mix:40:white}",
+        "hover": "1px solid {color.neutral.purple|mix:50:white}",
+        "selected": "1px solid {color.neutral.purple|mix:60:white}",
+        "active": "1px solid {color.neutral.purple|mix:60:white}",
+        "disabled": "1px solid {color.primary.neutral|mix:25:white}"
+      }
+    },
+    "focus": {
+      "outline": "1px solid {color.primary.neutral|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "size": {
+    "large": {
+      "height": "3rem",
+      "width": "3rem",
+      "spliticon": {
+        "padding": "0.75rem 0.625rem"
+      },
+      "buttoncontainer": {
+        "padding": "0.875rem 1.25rem",
+        "icononly": "0.875rem"
+      }
+    },
+    "medium": {
+      "height": "2.5rem",
+      "width": "2.5rem",
+      "spliticon": {
+        "padding": "0.5rem 0.625rem"
+      },
+      "buttoncontainer": {
+        "padding": "0.625rem 1rem",
+        "icononly": "0.625rem"
+      }
+    },
+    "small": {
+      "height": "2rem",
+      "width": "2rem",
+      "spliticon": {
+        "padding": "0.375rem"
+      },
+      "buttoncontainer": {
+        "padding": "0.375rem 0.75rem",
+        "icononly": "0.375rem"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "hover": {
+    "type": "darken",
+    "amount": 0.15
+  },
+  "active": {
+    "type": "darken",
+    "amount": 0.25
+  },
+  "disabled": {
+    "type": "lighten",
+    "amount": 0.4
+  },
+  "focus": {
+    "type": "darken",
+    "amount": 0.1
+  }
+}

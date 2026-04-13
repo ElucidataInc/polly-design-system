@@ -1,0 +1,214 @@
+{
+  "root": {
+    "padding": "0.625rem",
+    "fontfamily": "{font.family.inter}",
+    "border": "none",
+    "margintop": "0.5rem"
+  },
+  "panel": {
+    "background": "{color.standard.white}",
+    "color": "{color.primary.neutral|mix:90:white}",
+    "border": "0",
+    "borderradius": "0.75rem",
+    "boxshadow": "0 4px 20px 4px rgba(0, 0, 0, 0.08)",
+    "padding": "0.625rem",
+    "inline": {
+      "boxshadow": "none"
+    }
+  },
+  "header": {
+    "display": "flex",
+    "alignitems": "center",
+    "justifycontent": "space-between",
+    "paddingbottom": "0.625rem",
+    "separator": {
+      "style": "1px solid {color.primary.neutral|mix:60:white}"
+    },
+    "controls": {
+      "display": "inline-flex",
+      "alignitems": "center",
+      "justifycontent": "center",
+      "padding": {
+        "default": "0.25rem 0.5rem",
+        "large": "0.375rem 0.5rem"
+      },
+      "borderradius": "0.375rem",
+      "cursor": "pointer",
+      "userselect": "none",
+      "outlineoffset": "2px"
+    },
+    "icon": {
+      "fontsize": "0.875rem",
+      "marginleft": "0.25rem"
+    }
+  },
+  "title": {
+    "display": "flex",
+    "gap": "0.5rem"
+  },
+  "selectmonth": {
+    "borderradius": "0.25rem",
+    "padding": "0.25rem 0.5rem",
+    "cursor": "pointer",
+    "background": {
+      "hover": "{color.neutral.purple|mix:10:white}"
+    },
+    "outline": {
+      "focus": "1px solid {color.primary.purple}"
+    }
+  },
+  "selectyear": {
+    "borderradius": "0.25rem",
+    "padding": "0.25rem 0.5rem",
+    "cursor": "pointer",
+    "background": {
+      "hover": "{color.neutral.purple|mix:10:white}"
+    },
+    "outline": {
+      "focus": "1px solid {color.primary.purple}"
+    }
+  },
+  "navigationbutton": {
+    "display": "flex",
+    "alignitems": "center",
+    "justifycontent": "center",
+    "borderradius": "0.375rem",
+    "padding": "0.5rem",
+    "background": {
+      "default": "{color.standard.white}",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "active": "{color.neutral.purple|mix:25:white}"
+    },
+    "color": "{color.primary.neutral|mix:90:white}",
+    "border": "none",
+    "transition": "background-color 0.3s ease"
+  },
+  "navigationprev": {
+    "borderradius": "0.25rem",
+    "padding": {
+      "medium": "0.25rem",
+      "large": "0.375rem"
+    }
+  },
+  "navigationnext": {
+    "borderradius": "0.25rem",
+    "padding": {
+      "medium": "0.25rem",
+      "large": "0.375rem"
+    }
+  },
+  "calendar": {
+    "margin": "0.625rem 0"
+  },
+  "table": {
+    "margin": "0.625rem 0"
+  },
+  "weekdaycell": {
+    "padding": {
+      "medium": "0.125rem",
+      "large": "0.625rem"
+    },
+    "textalign": "center"
+  },
+  "weekdaytext": {
+    "color": "{color.neutral.purple|mix:80:black}",
+    "display": "inline-flex",
+    "alignitems": "center",
+    "justifycontent": "center",
+    "height": {
+      "medium": "1.5rem",
+      "large": "2rem"
+    },
+    "width": {
+      "medium": "1.5rem",
+      "large": "2rem"
+    }
+  },
+  "daycell": {
+    "padding": {
+      "medium": "0.25rem",
+      "large": "0.25rem 0.125rem"
+    },
+    "textalign": "center"
+  },
+  "daydisabled": {
+    "opacity": "0.4",
+    "cursor": "not-allowed"
+  },
+  "daytext": {
+    "display": "inline-flex",
+    "alignitems": "center",
+    "justifycontent": "center",
+    "borderradius": "50%",
+    "border": "none",
+    "cursor": "pointer",
+    "transition": "background-color 0.3s ease, color 0.3s ease",
+    "color": {
+      "default": "{color.primary.neutral|mix:90:white}",
+      "selected": "{color.standard.white}",
+      "hover": "{color.standard.white}"
+    },
+    "background": {
+      "hover": "{color.secondary.purple|mix:10:white}",
+      "active": "{color.primary.purple|mix:30:white}",
+      "selected": "{color.primary.purple}",
+      "selectedhover": "{color.primary.purple|mix:80:black}"
+    },
+    "height": {
+      "medium": "1.5rem",
+      "large": "2rem"
+    },
+    "width": {
+      "medium": "1.5rem",
+      "large": "2rem"
+    },
+    "disable": {
+      "opacity": "0.4"
+    }
+  },
+  "dayhighlight": {
+    "color": "{color.standard.white}",
+    "background": "{color.primary.purple}"
+  },
+  "monthpicker": {
+    "minwidth": {
+      "default": "232px",
+      "large": "288px"
+    },
+    "marginright": "0.5rem"
+  },
+  "monthcell": {
+    "padding": "0.3125rem 0",
+    "borderradius": "0.25rem",
+    "cursor": "pointer",
+    "transition": "background-color 0.3s ease",
+    "margin": {
+      "default": "0.3125rem 0",
+      "large": "0.375rem 0"
+    },
+    "background": {
+      "hover": "{color.secondary.purple|mix:10:white}",
+      "active": "{color.primary.purple|mix:30:white}"
+    }
+  },
+  "yearpicker": {
+    "borderradius": "0.25rem"
+  },
+  "decadecontrols": {
+    "color": "{color.primary.neutral|mix:60:black}"
+  },
+  "transitionbackground": "background-color 0.3s ease",
+  "inputicon": {
+    "padding": "1rem",
+    "size": "1rem"
+  },
+  "iconcontainer": {
+    "padding": "0.575rem"
+  },
+  "scouticon": {
+    "color": "{color.primary.neutral|mix:90:white}",
+    "fontsize": "1.5rem",
+    "lineheight": "1.125rem",
+    "right": "0.5rem"
+  }
+}

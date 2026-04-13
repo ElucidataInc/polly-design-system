@@ -1,0 +1,47 @@
+{
+  "root": {
+    "background": "{color.standard.white}",
+    "color": "{color.primary.neutral|mix:60:black}",
+    "border": "none",
+    "transition": "none",
+    "outlinecolor": "transparent",
+    "boxshadow": "none"
+  },
+  "header": {
+    "textalign": "center",
+    "padding":"0",
+    "marginbottom":"0.625rem"
+  },
+  "container": {
+    "borderradius": "{radius.lg}",
+    "borderwidth": "1px",
+    "bordercolor": "{color.primary.neutral|mix:40:black}",
+    "height": "30vh",
+    "maxheight": "15.625rem"
+  },
+  "list": {
+    "gap": "0",
+    "padding": "{spacing.0}",
+    "textalign": "center"
+  },
+  "optiongroup": {
+    "backgroundcolor": "transparent",
+    "color": "{color.primary.neutral|mix:60:black}"
+  },
+  "option": {
+    "padding": "{spacing.1}",
+    "borderradius": "{radius.none}",
+    "justifycontent": "center",
+    "transition": "none",
+    "backgroundcolor": "transparent",
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "selected": "{color.secondary.purple|mix:60:black}",
+      "focus": "{color.primary.neutral|mix:60:black}"
+    },
+    "background": {
+      "selected": "{color.neutral.purple|mix:25:white}",
+      "focus": "{color.neutral.purple|mix:10:white}"
+    }
+  }
+}

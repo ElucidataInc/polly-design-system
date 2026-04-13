@@ -1,0 +1,51 @@
+{
+  "primary": {
+    "purple": "#8E42EE",
+    "orange": "#F78E12",
+    "pink": "#EC4899",
+    "cyan": "#06B6D4",
+    "red": "#FF004D",
+    "blue": "#3C5DE2",
+    "green": "#24CF35",
+    "yellow": "#F7E217",
+    "neutral": "#808080"
+  },
+  "secondary": {
+    "purple": "#936DC3",
+    "orange": "#D98C30",
+    "pink": "#D85C99",
+    "cyan": "#21A3B9",
+    "red": "#CC3361",
+    "blue": "#6173BD"
+  },
+  "neutral": {
+    "purple": "#968AA6",
+    "orange": "#A18768",
+    "pink": "#AF859A",
+    "cyan": "#3A91A0",
+    "red": "#9F6073",
+    "blue": "#7A82A4"
+  },
+  "brand": {
+    "alt": {
+      "purple": "#6A42EE",
+      "dark": "#6A53B3"
+    }
+  },
+  "platform": {
+    "surfaces": "#A78FF7",
+    "sidebar": {
+      "surfaces": "#211d33",
+      "stroke": "#373051"
+    }
+  },
+  "standard": {
+    "white": "#ffffff",
+    "black": "#000000"
+  },
+  "surface": {
+    "hover": "#f8f5ff",
+    "active": "#f0ebff",
+    "disabled": "#f5f5f5"
+  }
+}

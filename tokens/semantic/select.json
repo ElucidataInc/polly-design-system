@@ -1,0 +1,179 @@
+{
+  "base": {
+    "background": {
+      "default": "{color.standard.white}",
+      "hover": "{color.standard.white}",
+      "focus": "{color.standard.white}",
+      "disabled": "{color.standard.white}"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "placeholder": "{color.primary.neutral|mix:90:white}",
+      "disabled": "{color.primary.neutral|mix:40:white}"
+    },
+    "border": {
+      "default": "1px solid {color.primary.neutral|mix:40:white}",
+      "color": {
+        "hover": "{color.primary.neutral|mix:60:white}",
+        "focus": "{color.secondary.purple|mix:80:black}"
+      }
+    },
+    "outline": {
+      "hover": "none",
+      "focus": "none",
+      "offset": "0"
+    },
+    "radius": "0.25rem",
+    "padding": {
+      "default": "0.5rem 0.5rem 0.5rem 0.75rem"
+    },
+    "height": {
+      "default": "2.5rem"
+    },
+    "width": "100%",
+    "fontfamily": "{font.family.inter}",
+    "fontsize": "{font.size.label.large}",
+    "fontweight": "{font.weight.normal}",
+    "lineheight": "1.25rem",
+    "transition": "border-color 300ms",
+    "appearance": "none",
+    "alignitems": "center",
+    "display": "flex"
+  },
+  "label": {
+    "padding": "0 0.375rem 0 0",
+    "fontsize": "{font.size.label.large}",
+    "fontweight": "{font.weight.normal}",
+    "lineheight": "{font.height.label.large}",
+    "textoverflow": "ellipsis",
+    "height": "auto",
+    "border": "0"
+  },
+  "trigger": {
+    "background": "transparent",
+    "color": "{color.primary.neutral|mix:90:white}",
+    "padding": "0",
+    "textalign": "center",
+    "width": "1.25rem",
+    "icon": {
+      "size": "1.25rem",
+      "transition": "transform 0.2s ease",
+      "transform": {
+        "open": "rotate(0deg)"
+      }
+    }
+  },
+  "clearicon": {
+    "color": "{color.primary.neutral|mix:90:white}",
+    "paddingright": "4em"
+  },
+  "overlay": {
+    "background": "{color.standard.white}",
+    "border": "0",
+    "radius": "0.5rem",
+    "shadow": "0 0 2px #0000001f,0 2px 4px #00000014",
+    "padding": "0.5rem 0",
+    "margin": "auto",
+    "zindex": "999"
+  },
+  "filter": {
+    "containerpadding": "0.25rem 0.875rem",
+    "inputpadding": "0.5rem 0.5rem 0.5rem 0.75rem",
+    "width": "100%",
+    "iconcolor": "{color.primary.neutral|mix:90:white}"
+  },
+  "list": {
+    "padding": "0",
+    "gap": "0"
+  },
+  "optiongroup": {
+    "fontsize": "{font.size.title.small}",
+    "fontweight": "{font.weight.medium}",
+    "lineheight": "{font.height.title.small}"
+  },
+  "option": {
+    "background": {
+      "default": "transparent",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "selected": "{color.neutral.purple|mix:25:white}",
+      "disabled": "transparent"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "hover": "{color.primary.neutral|mix:60:black}",
+      "selected": "{color.secondary.purple|mix:60:black}",
+      "disabled": "{color.primary.neutral|mix:30:white}"
+    },
+    "padding": {
+      "default": "0.625rem 0.625rem 0.625rem 0.875rem"
+    },
+    "fontsize": "{font.size.label.large}",
+    "fontweight": "{font.weight.normal}",
+    "lineheight": "{font.height.label.large}",
+    "border": "0",
+    "gap": "0.5rem",
+    "margin": "0",
+    "wordwrap": "break-word"
+  },
+  "emptymessage": {
+    "fontsize": "{font.size.label.large}",
+    "padding": "0.625rem 0.75rem"
+  },
+  "state": {
+    "disabled": {
+      "opacity": "0.6",
+      "cursor": "not-allowed"
+    },
+    "focus": {
+      "boxshadow": "none"
+    }
+  },
+  "size": {
+    "small": {
+      "height": "2rem",
+      "padding": "0.25rem 0.375rem",
+      "option": {
+        "padding": "0.3125rem 0.5rem"
+      }
+    },
+    "large": {
+      "height": "3rem",
+      "padding": "0.75rem 0.75rem 0.75rem 0.875rem",
+      "option": {
+        "padding": "0.875rem 0.875rem 0.875rem 1.25rem"
+      }
+    }
+  },
+  "variant": {
+    "rounded": {
+      "radius": "6.25rem",
+      "border": {
+        "default": "1px solid {color.primary.purple|mix:30:white}",
+        "hover": "{color.secondary.purple|mix:50:white}",
+        "focus": "{color.neutral.purple|mix:70:white}"
+      },
+      "outline": {
+        "hover": "1px solid {color.secondary.purple|mix:50:white}",
+        "focus": "1px solid {color.secondary.purple|mix:70:white}"
+      },
+      "padding": "0.5rem 0.5625rem 0.5rem 1rem"
+    }
+  },
+  "filtersearch": {
+    "display": "block",
+    "icon": {
+      "padding-x": "1rem",
+      "size": "1rem"
+    },
+    "inputicon": {
+      "right": "auto",
+      "left": "auto",
+      "top": "0.5rem"
+    }
+  },
+  "modifier": {
+    "textcapitalize": {
+      "texttransform": "capitalize"
+    }
+  }
+}

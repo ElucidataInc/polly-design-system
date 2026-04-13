@@ -1,0 +1,31 @@
+# Source files
+src/
+core-script/
+helper/
+scripts/
+build-tokens.js
+
+# Development files
+.DS_Store
+*.log
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Test files
+test/
+tests/
+spec/
+__tests__/
+
+# Documentation that's not needed in package
+docs/
+.github/

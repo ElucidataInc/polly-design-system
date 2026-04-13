@@ -1,0 +1,75 @@
+{
+  "base": {
+    "borderradius": "{radius.md}",
+    "padding": {
+      "default": "0.375rem 0.5rem",
+      "directional": "0"
+    },
+    "shadow": "0 2px 4px 0 rgba(0, 0, 0, 0.08)",
+    "display": "inline-block",
+    "arrow": {
+      "size": "0.25rem",
+      "borderstyle": "solid",
+      "bordercolor": "transparent",
+      "borderwidth": "0",
+      "margin": "0"
+    },
+    "default": {
+      "positioning": {
+        "right": {
+          "margin": "0 0.5rem"
+        },
+        "left": {
+          "margin": "0 -0.5rem"
+        },
+        "top": {
+          "margin": "-0.5rem 0"
+        },
+        "bottom": {
+          "margin": "0.5rem 0"
+        }
+      }
+    },
+    "qubit": {
+      "positioning": {
+        "right": {
+          "padding": "0.5rem 0.37rem",
+          "margin": "0 0.15rem"
+        },
+        "left": {
+          "padding": "0 0.25rem",
+          "margin": "0 -0.15rem"
+        },
+        "top": {
+          "padding": "0.25rem 0",
+          "margin": "0"
+        },
+        "bottom": {
+          "padding": "0.25rem 0",
+          "margin": "0.15rem 0"
+        }
+      }
+    }
+  },
+  "dark": {
+    "background": "{color.primary.neutral|mix:80:black}",
+    "color": "{color.standard.white}",
+    "arrow": {
+      "color": "{color.primary.neutral|mix:80:black}"
+    }
+  },
+  "light": {
+    "background": "{color.primary.neutral|mix:5:white}",
+    "color": "{color.primary.neutral|mix:60:black}",
+    "arrow": {
+      "color": "{color.primary.neutral|mix:5:white}"
+    }
+  },
+  "variant": {
+    "pathtooltip": {
+      "whitespace": "normal",
+      "width": "18rem",
+      "wordwrap": "break-word"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "base": {
+    "width": "auto",
+    "height": "auto",
+    "display": "inline-flex",
+    "alignitems": "center",
+    "cursor": "pointer",
+    "userselect": "none"
+  },
+  "box": {
+    "width": "2.5rem",
+    "height": "2.5rem",
+    "borderradius": "50%",
+    "border": "none",
+    "display": "flex",
+    "alignitems": "center",
+    "justifycontent": "center",
+    "transition": "background-color 0.3s ease",
+    "background": {
+      "default": "transparent",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "active": "{color.neutral.purple|mix:25:white}"
+    }
+  },
+  "icon": {
+    "width": "1.25rem",
+    "height": "1.25rem",
+    "borderradius": "50%",
+    "borderwidth": "2px",
+    "borderstyle": "solid",
+    "bordercolor": {
+      "default": "{color.primary.neutral|mix:90:white}",
+      "hover": "{color.primary.neutral|mix:70:black}",
+      "active": "{color.neutral.purple|mix:80:black}",
+      "checked": "{color.secondary.purple|mix:80:black}",
+      "disabled": "{color.primary.neutral|mix:40:white}"
+    },
+    "background": {
+      "default": "transparent",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "checked": "{color.secondary.purple|mix:80:black}"
+    },
+    "padding": {
+      "default": "0",
+      "checked": "0.125rem"
+    },
+    "margin": "0",
+    "position": "initial",
+    "transform": "translateZ(0) scale(1)",
+    "visibility": "visible"
+  },
+  "checked": {
+    "icon": {
+      "background": "{color.secondary.purple|mix:80:black}",
+      "bordercolor": "{color.secondary.purple|mix:80:black}",
+      "backgroundclip": "content-box",
+      "padding": "0.125rem"
+    },
+    "hover": {
+      "icon": {
+        "background": "{color.secondary.purple|mix:70:black}",
+        "bordercolor": "{color.secondary.purple|mix:70:black}",
+        "outlinewidth": "1px",
+        "outlinestyle": "solid",
+        "outlinecolor": "{color.primary.neutral|mix:60:black}",
+        "outlineoffset": "1px"
+      }
+    }
+  },
+  "focus": {
+    "icon": {
+      "outlinewidth": "1px",
+      "outlinestyle": "solid",
+      "outlinecolor": "{color.primary.neutral|mix:60:black}",
+      "outlineoffset": "1px"
+    }
+  },
+  "disabled": {
+    "box": {
+      "pointerevents": "none"
+    },
+    "icon": {
+      "bordercolor": "{color.primary.neutral|mix:40:white}"
+    }
+  },
+  "label": {
+    "fontsize": "{font.size.label.large}",
+    "fontweight": "{font.weight.normal}",
+    "margin": "0",
+    "padding": "0"
+  },
+  "medium": {
+    "box": {
+      "width": "2rem",
+      "height": "2rem"
+    }
+  }
+}

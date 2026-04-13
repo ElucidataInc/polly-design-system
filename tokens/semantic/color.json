@@ -1,0 +1,38 @@
+{
+  "background": {
+    "base": "{color.standard.white}",
+    "surface": "{color.surface.hover}",
+    "overlay": "{color.standard.white}"
+  },
+  "border": {
+    "default": "{color.neutral.purple}",
+    "subtle": "{color.surface.hover}",
+    "strong": "{color.neutral.purple}"
+  },
+  "text": {
+    "primary": "{color.primary.neutral}",
+    "secondary": "{color.neutral.purple}",
+    "tertiary": "{color.neutral.blue}",
+    "inverse": "{color.standard.white}",
+    "disabled": "{color.primary.neutral}"
+  },
+  "brand": {
+    "primary": "{color.primary.purple}",
+    "primaryhover": "{color.primary.purple}",
+    "primaryactive": "{color.primary.purple}",
+    "secondary": "{color.secondary.purple}",
+    "tertiary": "{color.secondary.purple}"
+  },
+  "state": {
+    "success": "{color.primary.green}",
+    "warning": "{color.primary.yellow}",
+    "error": "{color.primary.red}",
+    "info": "{color.primary.blue}"
+  },
+  "interactive": {
+    "hover": "{color.surface.hover}",
+    "press": "{color.surface.active}",
+    "focus": "{color.primary.purple}",
+    "disabled": "{color.surface.disabled}"
+  }
+}

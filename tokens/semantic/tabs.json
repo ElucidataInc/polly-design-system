@@ -1,0 +1,133 @@
+{
+  "container": {
+    "width": "100%"
+  },
+  "list": {
+    "background": "transparent",
+    "border": "none",
+    "gap": "0",
+    "navbutton": {
+      "size": "2.25rem",
+      "color": "{color.neutral.purple|mix:80:black}",
+      "background": "transparent"
+    },
+    "inkbar": {
+      "height": "2px",
+      "color": "{color.primary.purple|mix:80:black}"
+    }
+  },
+  "tab": {
+    "height": "2.25rem",
+    "lineheight": "{font.height.label.medium}",
+    "padding": {
+      "x": "{spacing.5}",
+      "y": "{spacing.0}"
+    },
+    "radius": "0",
+    "font": {
+      "family": "{font.family.inter}",
+      "size": "{font.size.label.large}",
+      "weight": "{font.weight.medium}"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:60:black}",
+      "hover": "{color.primary.neutral|mix:60:black}",
+      "active": "{color.primary.purple|mix:60:black}",
+      "disabled": "{color.neutral.purple|alpha:0.5}"
+    },
+    "background": {
+      "default": "transparent",
+      "hover": "transparent",
+      "active": "transparent"
+    },
+    "icon": {
+      "size": "1.25rem",
+      "color": {
+        "default": "{color.neutral.purple|mix:80:black}",
+        "active": "{color.primary.purple|mix:80:black}"
+      }
+    }
+  },
+  "panel": {
+    "background": "transparent",
+    "padding": "{spacing.0}",
+    "border": "none",
+    "color": "{color.primary.neutral|mix:45:black}"
+  },
+  "variant": {
+    "filled": {
+      "list": {
+        "gap": "{spacing.2}"
+      },
+      "tab": {
+        "radius": "{radius.lg}",
+        "background": {
+          "default": "transparent",
+          "hover": "{color.neutral.purple|mix:15:white}",
+          "pressed": "{color.neutral.purple|mix:30:white}",
+          "active": "{color.secondary.purple|mix:15:white}"
+        },
+        "color": {
+          "active": "{color.secondary.purple|mix:60:black}"
+        },
+        "icon": {
+          "color": {
+            "default": "{color.secondary.purple|mix:80:black}",
+            "active": "{color.secondary.purple|mix:80:black}"
+          }
+        },
+        "inkbar": {
+          "height": "0",
+          "color": "transparent"
+        }
+      }
+    }
+  },
+  "size": {
+    "medium": {
+      "tab": {
+        "height": "2.125rem",
+        "font": {
+          "size": "{font.size.label.medium}"
+        },
+        "icon": {
+          "size": "1rem"
+        }
+      }
+    }
+  },
+  "modifier": {
+    "notification": {
+      "dot": {
+        "size": "0.375rem",
+        "radius": "{radius.full}",
+        "background": "{color.primary.purple|mix:60:black}"
+      }
+    },
+    "navborderbottom": {
+      "list": {
+        "border": "1px solid {color.neutral.purple|mix:20:white}"
+      }
+    },
+    "omixatlas": {
+      "landing": {
+        "list": {
+          "padding": "0.5rem 2.5rem"
+        }
+      },
+      "details": {
+        "list": {
+          "padding": "0.5rem 1.25rem 0"
+        }
+      },
+      "dataset-cards": {
+        "nav": {
+          "padding": "0.25rem 1rem 0"
+        },
+        "panels": {
+          "padding": "0.75rem 1rem 0.5rem"
+        }
+      }
+    }
+  }
+}

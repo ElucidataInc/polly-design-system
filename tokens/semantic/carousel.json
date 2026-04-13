@@ -1,0 +1,20 @@
+{
+  "indicator": {
+    "list": {
+      "padding": "0 0.5rem 0 0",
+      "gap": "0.5rem"
+    },
+    "button": {
+      "width": "0.5rem",
+      "height": "0.5rem",
+      "border": {
+        "radius": "50%"
+      },
+      "background": {
+        "default": "#5f43cb",
+        "active": "#ec9023"
+      },
+      "transition": "transform 0.6s ease-in-out"
+    }
+  }
+}

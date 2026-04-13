@@ -1,0 +1,43 @@
+{
+  "stroke": {
+    "color": {
+      "default": "{color.brand.alt.dark|mix:90:black}"
+    }
+  },
+  "animation": {
+    "dash": {
+      "duration": "1.5s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    },
+    "color": {
+      "duration": "6s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    }
+  },
+  "keyframes": {
+    "dash": {
+      "start": {
+        "strokearray": "1, 200",
+        "strokeoffset": "0"
+      },
+      "middle": {
+        "strokearray": "89, 200",
+        "strokeoffset": "-35px"
+      },
+      "end": {
+        "strokearray": "89, 200",
+        "strokeoffset": "-124px"
+      }
+    },
+    "color": {
+      "start": {
+        "stroke": "{color.brand.alt.dark|mix:90:black}"
+      },
+      "end": {
+        "stroke": "{color.brand.alt.dark|mix:90:black}"
+      }
+    }
+  }
+}

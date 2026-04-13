@@ -1,0 +1,49 @@
+{
+  "name": "@polly/design-tokens",
+  "version": "1.0.0",
+  "description": "Centralized design tokens for Polly applications",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "tokens/",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./css": "./dist/css-variables.css",
+    "./scss": "./dist/mixins.scss",
+    "./tokens": "./dist/tokens.json"
+  },
+  "scripts": {
+    "build": "node build-tokens.js && npm run build:package",
+    "build:package": "node scripts/build-package.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "scss",
+    "theme",
+    "polly",
+    "design-system"
+  ],
+  "author": "Polly Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElucidataInc/polly-design-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

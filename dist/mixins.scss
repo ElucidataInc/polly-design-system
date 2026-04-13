@@ -1,0 +1,169 @@
+// Generated SCSS helper functions and mixins
+
+// ── Color helpers ──────────────────────────────────────────────────────────
+
+@function color-mix($color1, $percent1, $color2, $percent2: 100 - $percent1) {
+  @return mix($color2, $color1, $percent2);
+}
+
+@function shade($color, $percent) {
+  @return darken($color, $percent);
+}
+
+@function tint($color, $percent) {
+  @return lighten($color, $percent);
+}
+
+// ── Color mixins ───────────────────────────────────────────────────────────
+
+@mixin add-color($property-name, $color) {
+  #{$property-name}: $color;
+}
+
+@mixin add-color-mix($property, $color1, $percent1, $color2, $percent2) {
+  #{$property}: color-mix($color1, $percent1, $color2, $percent2);
+}
+
+// ── Transition / shadow / radius ───────────────────────────────────────────
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+@mixin shadow($value) {
+  -moz-box-shadow:    $value;
+  -webkit-box-shadow: $value;
+  box-shadow:         $value;
+}
+
+@mixin border-radius($val) {
+  -moz-border-radius:    $val;
+  -webkit-border-radius: $val;
+  border-radius:         $val;
+}
+
+@mixin border-radius-right($val) {
+  -moz-border-radius-bottomright:    $val;
+  -moz-border-radius-topright:       $val;
+  -webkit-border-bottom-right-radius: $val;
+  -webkit-border-top-right-radius:    $val;
+  border-bottom-right-radius:         $val;
+  border-top-right-radius:            $val;
+}
+
+@mixin border-radius-left($val) {
+  -moz-border-radius-bottomleft:    $val;
+  -moz-border-radius-topleft:       $val;
+  -webkit-border-bottom-left-radius: $val;
+  -webkit-border-top-left-radius:    $val;
+  border-bottom-left-radius:         $val;
+  border-top-left-radius:            $val;
+}
+
+@mixin border-radius-top($val) {
+  -moz-border-radius-topleft:     $val;
+  -moz-border-radius-topright:    $val;
+  -webkit-border-top-left-radius:  $val;
+  -webkit-border-top-right-radius: $val;
+  border-top-left-radius:          $val;
+  border-top-right-radius:         $val;
+}
+
+@mixin border-radius-bottom($val) {
+  -moz-border-radius-bottomleft:      $val;
+  -moz-border-radius-bottomright:     $val;
+  -webkit-border-bottom-left-radius:  $val;
+  -webkit-border-bottom-right-radius: $val;
+  border-bottom-left-radius:          $val;
+  border-bottom-right-radius:         $val;
+}
+
+// ── Typography ─────────────────────────────────────────────────────────────
+
+@mixin typography(
+  $fontFamily,
+  $fontSize,
+  $fontWeight,
+  $lineHeight,
+  $letterSpacing,
+  $textAlign: null
+) {
+  font-family:    $fontFamily    !important;
+  font-size:      $fontSize      !important;
+  font-weight:    $fontWeight    !important;
+  line-height:    $lineHeight    !important;
+  letter-spacing: $letterSpacing !important;
+
+  @if $textAlign != null {
+    text-align: $textAlign !important;
+  }
+}
+
+// ── Input states ───────────────────────────────────────────────────────────
+
+@mixin focused-input {
+  @include shadow($inputFocusShadow);
+  border-color: $inputFocusBorderColor;
+  outline: 0 none;
+}
+
+@mixin disabled-input {
+  background-color: $inputDisabledBgColor;
+  border-color:     $inputDisabledBorderColor;
+  color:            $inputDisabledTextColor;
+  cursor:           default !important;
+  pointer-events:   none;
+}
+
+// ── Misc ───────────────────────────────────────────────────────────────────
+
+@mixin polly-icon-override($icon) {
+  &:before {
+    content:     $icon;
+    font-family: 'iconset';
+  }
+}
+
+@mixin appearance($val) {
+  -moz-appearance:    $val;
+  -webkit-appearance: $val;
+  appearance:         $val;
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: $opacity * 100;
+  filter:  alpha(opacity=$opacity-ie);
+  opacity: $opacity;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content; }
+  :-moz-placeholder            { @content; }
+  ::-moz-placeholder           { @content; }
+  :-ms-input-placeholder       { @content; }
+}
+
+@mixin rotate($deg) {
+  -moz-transform:    rotate($deg);
+  -ms-transform:     rotate($deg);
+  -o-transform:      rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform:         rotate($deg);
+}
+
+@mixin scale($deg) {
+  -moz-transform:    scale($deg);
+  -ms-transform:     scale($deg);
+  -o-transform:      scale($deg);
+  -webkit-transform: scale($deg);
+  transform:         scale($deg);
+}
+
+@mixin translate-x($deg) {
+  -ms-transform:     translateX($deg);
+  -webkit-transform: translateX($deg);
+  transform:         translateX($deg);
+}
