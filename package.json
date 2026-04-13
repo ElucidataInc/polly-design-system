@@ -1,5 +1,5 @@
 {
-  "name": "@navendrasingh/polly-design-tokens",
+  "name": "@polly/design-tokens",
   "version": "1.0.0",
   "description": "Centralized design tokens for Polly applications",
   "main": "./design-tokens/build/index.js",
@@ -24,7 +24,8 @@
     "build": "node build-tokens.js && npm run build:package",
     "build:package": "node scripts/build-package.js",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "design-tokens",
