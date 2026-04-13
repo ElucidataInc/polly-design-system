@@ -4,20 +4,17 @@ const { resolve } = require('path');
 
 // Configuration
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const DIST_DIR = path.resolve(PROJECT_ROOT, 'dist');
-const BUILD_DIR = path.resolve(PROJECT_ROOT, 'build');
+const BUILD_DIR = path.resolve(PROJECT_ROOT, 'design-tokens', 'build');
 
-// Ensure dist directory exists
-if (!fs.existsSync(DIST_DIR)) {
-  fs.mkdirSync(DIST_DIR, { recursive: true });
+// Ensure build directory exists
+if (!fs.existsSync(BUILD_DIR)) {
+  fs.mkdirSync(BUILD_DIR, { recursive: true });
 }
 
 console.log('📦 Building NPM package...');
 
-// Copy built files
+// Copy JavaScript source files to build directory
 const filesToCopy = [
-  { src: path.join(BUILD_DIR, 'css-variables.min.css'), dest: 'css-variables.css' },
-  { src: path.join(BUILD_DIR, 'mixins.scss'), dest: 'mixins.scss' },
   { src: path.join(PROJECT_ROOT, 'src/index.js'), dest: 'index.js' },
   { src: path.join(PROJECT_ROOT, 'src/index.esm.js'), dest: 'index.esm.js' },
   { src: path.join(PROJECT_ROOT, 'src/index.d.ts'), dest: 'index.d.ts' }
@@ -25,7 +22,7 @@ const filesToCopy = [
 
 filesToCopy.forEach(({ src, dest }) => {
   if (fs.existsSync(src)) {
-    fs.copyFileSync(src, path.join(DIST_DIR, dest));
+    fs.copyFileSync(src, path.join(BUILD_DIR, dest));
     console.log(`   ✓ Copied ${dest}`);
   } else {
     console.warn(`   ⚠️  Warning: ${src} not found`);
@@ -89,7 +86,7 @@ try {
   
   // Write tokens as JSON
   fs.writeFileSync(
-    path.join(DIST_DIR, 'tokens.json'),
+    path.join(BUILD_DIR, 'tokens.json'),
     JSON.stringify(resolvedTokens, null, 2)
   );
   console.log('   ✓ Created tokens.json');

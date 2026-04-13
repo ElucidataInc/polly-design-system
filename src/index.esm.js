@@ -4,7 +4,15 @@ import tokens from '../dist/tokens.json' assert { type: 'json' };
 // Export individual token categories for easier access
 export const coreTokens = {};
 export const semanticTokens = {};
-export const componentTokens = {};
+
+// Define semantic token prefixes (all tokens from semantic folder)
+const semanticPrefixes = [
+  'semantic.', 'button.', 'card.', 'tabs.', 'accordion.', 'select.', 'toggleswitch.',
+  'popover.', 'toast.', 'badge.', 'radiobutton.', 'inputtext.', 'datepicker.',
+  'tooltip.', 'table.', 'autocomplete.', 'progressbar.', 'skeleton.', 'avatar.',
+  'panel.', 'dialog.', 'confirmdialog.', 'progressspinner.', 'password.',
+  'textarea.', 'picklist.', 'listbox.', 'carousel.', 'stepper.', 'chip.'
+];
 
 // Categorize tokens
 Object.keys(tokens).forEach(key => {
@@ -12,10 +20,8 @@ Object.keys(tokens).forEach(key => {
       key.startsWith('radius.') || key.startsWith('font.') || 
       key.startsWith('elevation.')) {
     coreTokens[key] = tokens[key];
-  } else if (key.startsWith('semantic.')) {
+  } else if (semanticPrefixes.some(prefix => key.startsWith(prefix))) {
     semanticTokens[key] = tokens[key];
-  } else {
-    componentTokens[key] = tokens[key];
   }
 });
 
@@ -43,7 +49,6 @@ export default {
   tokens,
   coreTokens,
   semanticTokens,
-  componentTokens,
   getToken,
   getCSSVariable,
   createTheme
