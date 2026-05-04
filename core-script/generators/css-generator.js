@@ -3,8 +3,6 @@
 
 'use strict';
 
-const GOOGLE_FONTS_IMPORT = "https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Space+Grotesk:wght@400..900&family=JetBrains+Mono:wght@500";
-
 /**
  * Sanitizes a token key into a normalized identifier.
  *
@@ -63,7 +61,6 @@ function generateCssVariables(resolvedTokens) {
     .join('\n');
 
   return [
-    `@import url('${GOOGLE_FONTS_IMPORT}');`,
     '',
     ':root {',
     declarations,
