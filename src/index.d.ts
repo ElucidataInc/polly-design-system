@@ -36,17 +36,17 @@ declare const pollyDesignTokens: PollyDesignTokens;
 export default pollyDesignTokens;
 
 // Module declarations for CSS and SCSS imports
-declare module 'polly-fe/design-tokens/css' {
+declare module '@polly-fe/design-tokens/css' {
   const css: string;
   export default css;
 }
 
-declare module 'polly-fe/design-tokens/scss' {
+declare module '@polly-fe/design-tokens/scss' {
   const scss: string;
   export default scss;
 }
 
-declare module 'polly-fe/design-tokens/tokens' {
+declare module '@polly-fe/design-tokens/tokens' {
   const tokens: TokenCollection;
   export default tokens;
 }

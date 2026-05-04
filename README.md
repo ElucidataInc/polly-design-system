@@ -5,7 +5,7 @@ A centralized design token system for Polly applications. This package provides 
 ## Installation
 
 ```bash
-npm install polly-fe/design-tokens
+npm install @polly-fe/design-tokens
 ```
 
 ## Usage
@@ -15,13 +15,13 @@ npm install polly-fe/design-tokens
 Import the CSS variables into your application:
 
 ```css
-@import 'polly-fe/design-tokens/css';
+@import '@polly-fe/design-tokens/css';
 ```
 
 Or in your JavaScript/TypeScript:
 
 ```javascript
-import 'polly-fe/design-tokens/css';
+import '@polly-fe/design-tokens/css';
 ```
 
 ### SCSS Mixins
@@ -29,7 +29,7 @@ import 'polly-fe/design-tokens/css';
 Import SCSS mixins for enhanced styling:
 
 ```scss
-@import 'polly-fe/design-tokens/scss';
+@import '@polly-fe/design-tokens/scss';
 ```
 
 ### JavaScript/TypeScript
@@ -37,7 +37,7 @@ Import SCSS mixins for enhanced styling:
 #### Basic Usage
 
 ```javascript
-import { tokens, getToken, getCSSVariable } from 'polly-fe/design-tokens';
+import { tokens, getToken, getCSSVariable } from '@polly-fe/design-tokens';
 
 // Get a specific token value
 const primaryColor = getToken('color.primary.500');
@@ -53,7 +53,7 @@ console.log(tokens);
 #### Categorized Access
 
 ```javascript
-import { coreTokens, semanticTokens, componentTokens } from 'polly-fe/design-tokens';
+import { coreTokens, semanticTokens, componentTokens } from '@polly-fe/design-tokens';
 
 // Access core design tokens (colors, spacing, typography, etc.)
 console.log(coreTokens);
@@ -68,7 +68,7 @@ console.log(componentTokens);
 #### Creating Custom Themes
 
 ```javascript
-import { createTheme } from 'polly-fe/design-tokens';
+import { createTheme } from '@polly-fe/design-tokens';
 
 // Create a custom theme with overrides
 const darkTheme = createTheme({
@@ -82,7 +82,7 @@ const darkTheme = createTheme({
 ```typescript
 // In your Angular component
 import { Component } from '@angular/core';
-import { tokens, getCSSVariable } from 'polly-fe/design-tokens';
+import { tokens, getCSSVariable } from '@polly-fe/design-tokens';
 
 @Component({
   selector: 'app-example',
@@ -100,7 +100,7 @@ export class ExampleComponent {
 
 ```scss
 // In your SCSS file
-@import 'polly-fe/design-tokens/scss';
+@import '@polly-fe/design-tokens/scss';
 
 .my-component {
   background-color: var(--color-primary-500);
@@ -113,8 +113,8 @@ export class ExampleComponent {
 
 ```jsx
 import React from 'react';
-import { getCSSVariable } from 'polly-fe/design-tokens';
-import 'polly-fe/design-tokens/css';
+import { getCSSVariable } from '@polly-fe/design-tokens';
+import '@polly-fe/design-tokens/css';
 
 function MyComponent() {
   return (
