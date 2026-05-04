@@ -28,10 +28,7 @@
     "postinstall": "npm run build",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "publish:major": "npm version major && npm publish",
-    "release": "npm run build && npm publish",
-    "release:minor": "npm run build && npm version minor && npm publish",
-    "release:major": "npm run build && npm version major && npm publish"
+    "publish:major": "npm version major && npm publish"
   },
   "keywords": [
     "design-tokens",
