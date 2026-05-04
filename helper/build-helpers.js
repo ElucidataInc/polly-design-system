@@ -47,7 +47,7 @@ function displayUsageExamples(isVerbose) {
     ------------------------------------------------------------------------------
     
     1. Import CSS Variables in your SCSS/CSS files:
-       @import '@polly/design-tokens/css';
+       @import 'polly-fe/design-tokens/css';
        
        Then use anywhere:
        .my-component {
@@ -57,7 +57,7 @@ function displayUsageExamples(isVerbose) {
        }
     
     2. Import SCSS Mixins (optional):
-       @import '@polly/design-tokens/scss';
+       @import 'polly-fe/design-tokens/scss';
        
        Then use helper functions:
        .card {
@@ -70,7 +70,7 @@ function displayUsageExamples(isVerbose) {
     
     4. PrimeNG Theme Integration:
        The CSS variables are automatically available to PrimeNG components
-       after importing '@polly/design-tokens/css' in your main styles file.
+       after importing 'polly-fe/design-tokens/css' in your main styles file.
     
     🎨 Color Features:
     ├─ Color mixing: {color.secondary.purple|mix:30:white}
