@@ -119,6 +119,9 @@
     }
   },
   "prelogin": {
+    "autofill": {
+      "background": "#252153"
+    },
     "color": {
       "default": "#a4a0cf",
       "placeholder": "#757575",
