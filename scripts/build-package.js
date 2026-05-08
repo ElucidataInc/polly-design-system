@@ -4,7 +4,7 @@ const { resolve } = require('path');
 
 // Configuration
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const BUILD_DIR = path.resolve(PROJECT_ROOT, 'design-tokens', 'build');
+const BUILD_DIR = path.resolve(PROJECT_ROOT, 'dist');
 
 // Ensure build directory exists
 if (!fs.existsSync(BUILD_DIR)) {

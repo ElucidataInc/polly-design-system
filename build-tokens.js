@@ -145,7 +145,7 @@ function generateOutputFiles(resolvedTokens) {
     'mixins.scss': fileGenerators.generateScssHelpers(),
   };
 
-  const buildDir = resolve(__dirname, 'design-tokens', 'build');
+  const buildDir = resolve(__dirname, 'dist');
   fileGenerators.writeFiles(buildDir, files);
 }
 

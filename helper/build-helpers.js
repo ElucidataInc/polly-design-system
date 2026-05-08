@@ -29,8 +29,8 @@ function displayBuildSummary(startTime, tokenCounts) {
     ├─ Build time: ${buildTime}s
     │
     📁 Generated Files:
-    ├─ CSS Variables: design-tokens/build/css-variables.min.css
-    └─ SCSS Mixins: design-tokens/build/mixins.scss
+    ├─ CSS Variables: dist/css-variables.min.css
+    └─ SCSS Mixins: dist/mixins.scss
   `);
 }
 

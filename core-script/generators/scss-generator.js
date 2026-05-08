@@ -240,7 +240,7 @@ function generateMainScss() {
   return `// Main SCSS file — imports design tokens
 //
 // Usage in your own SCSS files:
-//   @import '@design-tokens/build/tokens.scss';
+//   @import '@design-tokens/dist/tokens.scss';
 //
 // Then use CSS custom properties anywhere:
 //   .my-component {

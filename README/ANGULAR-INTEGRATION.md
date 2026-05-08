@@ -16,7 +16,7 @@ Add the generated CSS variables file to your project's styles array in `angular.
               "node_modules/polly-commons/css/shared.min.css",
               "node_modules/polly-qubit/css/primeng/polly.min.css",
               "node_modules/polly-qubit/css/shared.min.css",
-              "src/app/polly-design-token/design-tokens/build/css-variables.min.css",  // ← Add this line
+              "src/app/polly-design-token/dist/css-variables.min.css",  // ← Add this line
               "src/styles.scss"
             ]
           }
@@ -39,7 +39,7 @@ If you have multiple projects (polly-manage, polly-admin, data-curation, etc.), 
       "options": {
         "styles": [
           // ... other styles
-          "src/app/polly-design-token/design-tokens/build/css-variables.min.css",
+          "src/app/polly-design-token/dist/css-variables.min.css",
           "projects/polly-manage/src/styles.scss"
         ]
       }
@@ -54,7 +54,7 @@ If you have multiple projects (polly-manage, polly-admin, data-curation, etc.), 
       "options": {
         "styles": [
           // ... other styles
-          "src/app/polly-design-token/design-tokens/build/css-variables.min.css",
+          "src/app/polly-design-token/dist/css-variables.min.css",
           "projects/polly-admin/src/styles.scss"
         ]
       }
@@ -70,10 +70,10 @@ Alternatively, you can import the CSS variables in your main `styles.scss` file:
 ### In `src/styles.scss`:
 ```scss
 // Import generated design tokens - makes CSS variables globally accessible
-@import 'app/polly-design-token/design-tokens/build/css-variables.min.css';
+@import 'app/polly-design-token/dist/css-variables.min.css';
 
 // Or use a relative path
-@import './app/polly-design-token/design-tokens/build/css-variables.min.css';
+@import './app/polly-design-token/dist/css-variables.min.css';
 
 // Rest of your global styles...
 ```
@@ -81,10 +81,10 @@ Alternatively, you can import the CSS variables in your main `styles.scss` file:
 ### In project-specific styles:
 ```scss
 // In projects/polly-manage/src/styles.scss
-@import '../../../src/app/polly-design-token/design-tokens/build/css-variables.min.css';
+@import '../../../src/app/polly-design-token/dist/css-variables.min.css';
 
 // In projects/polly-admin/src/styles.scss
-@import '../../../src/app/polly-design-token/design-tokens/build/css-variables.min.css';
+@import '../../../src/app/polly-design-token/dist/css-variables.min.css';
 ```
 
 ## Method 3: Create a Shared SCSS Import
@@ -94,8 +94,8 @@ Create a shared SCSS file that all projects can import:
 ### Create `src/app/polly-design-token/index.scss`:
 ```scss
 // Main entry point for design tokens
-@import './design-tokens/build/css-variables.min.css';
-@import './design-tokens/build/mixins.scss';
+@import './dist/css-variables.min.css';
+@import './dist/mixins.scss';
 ```
 
 ### Then import in your styles:
@@ -136,7 +136,7 @@ For cleaner imports, add path mapping in `tsconfig.json`:
 
 Then you can import like:
 ```scss
-@import '@design-tokens/design-tokens/build/css-variables.min.css';
+@import '@design-tokens/dist/css-variables.min.css';
 ```
 
 ## Verification
@@ -188,7 +188,7 @@ After adding the import, verify that CSS variables are available:
 Use absolute paths from project root:
 ```json
 "styles": [
-  "src/app/polly-design-token/design-tokens/build/css-variables.min.css"
+  "src/app/polly-design-token/dist/css-variables.min.css"
 ]
 ```
 

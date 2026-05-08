@@ -27,7 +27,7 @@ project/polly-design-token/
 │   ├── token-utils.js       # General utilities
 │   └── file-generators.js   # Output file generation
 ├── build-tokens.js           # Main build script
-└── design-tokens/build/      # Generated output
+└── dist/                     # Generated output
     ├── css-variables.min.css     # All CSS variables
     └── mixins.scss          # SCSS helper mixins
 
@@ -161,7 +161,7 @@ node build-tokens.js
 
 The build system generates two essential files:
 
-#### 1. `design-tokens/build/css-variables.min.css`
+#### 1. `dist/css-variables.min.css`
 Contains all computed CSS variables:
 
 ```css
@@ -182,7 +182,7 @@ Contains all computed CSS variables:
 }
 ```
 
-#### 2. `design-tokens/build/mixins.scss`
+#### 2. `dist/mixins.scss`
 Optional SCSS helper functions:
 
 ```scss
@@ -199,10 +199,10 @@ Optional SCSS helper functions:
 
 ```scss
 // In your main styles.scss or component SCSS
-@import 'design-tokens/build/css-variables.min.css';
+@import 'dist/css-variables.min.css';
 
 // Optional: Import mixins if needed
-@import 'design-tokens/build/mixins.scss';
+@import 'dist/mixins.scss';
 ```
 
 ### Use in SCSS/CSS
@@ -287,7 +287,7 @@ Support for different component states and variants:
 The build can generate TypeScript definitions for type-safe token access:
 
 ```typescript
-import { designTokens } from '@design-tokens/build/design-tokens';
+import { designTokens } from '@design-tokens/dist/design-tokens';
 const primaryColor = designTokens.color.primary.purple;
 ```
 

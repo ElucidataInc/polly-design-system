@@ -29,7 +29,7 @@ function ensureDir(dirPath) {
  * @throws {TypeError} if filePath or content are not strings
  *
  * @example
- * writeFile('/output/build/tokens.css', ':root { --color: red; }');
+ * writeFile('/output/dist/tokens.css', ':root { --color: red; }');
  */
 function writeFile(filePath, content) {
   if (typeof filePath !== 'string' || !filePath) {
@@ -52,7 +52,7 @@ function writeFile(filePath, content) {
  * @param {Record<string, string>}  files    - Map of relative path => file content
  *
  * @example
- * writeFiles('/output/build', {
+ * writeFiles('/output/dist', {
  *   'tokens.css':        cssContent,
  *   'tokens.scss':       scssContent,
  *   'tokens.ts':         tsContent,
