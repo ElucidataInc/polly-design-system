@@ -1,6 +1,7 @@
 {
   "name": "@polly-fe/design-tokens",
-  "version": "1.4.0",
+  "version": "1.4.1",
+  "type": "module",
   "description": "Centralized design tokens for Polly applications",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -16,11 +17,12 @@
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
     },
-    "./style.css": "./dist/css-variables.min.css",
-    "./mixins.scss": "./dist/mixins.scss",
+    "./styles": "./dist/css-variables.min.css",
+    "./mixins": "./dist/mixins.scss",
     "./tokens": "./dist/tokens.json"
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "node build-tokens.js && npm run build:package",
     "build:package": "node scripts/build-package.js",
     "prepare": "npm run build",
@@ -45,7 +47,11 @@
     "url": "https://github.com/ElucidataInc/polly-design-system.git"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
