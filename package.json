@@ -16,8 +16,8 @@
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
     },
-    "./css": "./dist/css-variables.min.css",
-    "./scss": "./dist/mixins.scss",
+    "./style.css": "./dist/css-variables.min.css",
+    "./mixins.scss": "./dist/mixins.scss",
     "./tokens": "./dist/tokens.json"
   },
   "scripts": {
