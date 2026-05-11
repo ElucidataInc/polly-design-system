@@ -1,13 +1,18 @@
 {
   "name": "@polly-fe/design-tokens",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Centralized design tokens for Polly applications",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*..min.css"
+  ],
   "files": [
-    "dist/",
-    "tokens/",
+    "dist",
+    "tokens",
     "README.md"
   ],
   "exports": {
@@ -16,12 +21,14 @@
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
     },
-    "./styles": "./dist/css-variables.min.css",
-    "./mixins": "./dist/mixins.scss",
+    "./style": "./dist/css-variables.min.css",
+    "./scss": "./dist/mixins.scss",
     "./tokens": "./dist/tokens.json"
   },
+  "style": "./dist/css-variables.min.css",
+  "sass": "./dist/mixins.scss",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf node_modules",
     "build": "node build-tokens.js && npm run build:package",
     "build:package": "node scripts/build-package.js",
     "prepare": "npm run build",
