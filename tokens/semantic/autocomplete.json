@@ -1,20 +1,6 @@
 {
   "base": {
     "transitionduration": "0.3s ease-in-out",
-    "input": {
-      "width": "100%",
-      "padding": {
-        "default": "0.5rem 0.75rem",
-        "withdropdown": "0.5rem 2.25rem 0.5rem 0.75rem"
-      },
-      "borderradius": {
-        "withdropdown": {
-          "start": "0.25rem",
-          "end": "0.25rem"
-        }
-      },
-      "color": "{color.primary.neutral|mix:60:black}"
-    },
     "loader": {
       "default": {
         "inset": "1rem"
@@ -70,6 +56,18 @@
       }
     },
     "input": {
+      "width": "100%",
+      "padding": {
+        "default": "0.5rem 0.75rem",
+        "withdropdown": "0.5rem 2.25rem 0.5rem 0.75rem"
+      },
+      "borderradius": {
+        "withdropdown": {
+          "start": "0.25rem",
+          "end": "0.25rem"
+        }
+      },
+      "color": "{color.primary.neutral|mix:60:black}",
       "multiple": {
         "align-items": "center",
         "background": "transparent",

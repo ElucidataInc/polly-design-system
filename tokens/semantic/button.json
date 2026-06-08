@@ -103,7 +103,7 @@
       "default": "{color.primary.neutral|mix:60:black}",
       "pressed": "{color.secondary.purple|mix:60:black}",
       "loading": "{color.secondary.purple|mix:60:black}",
-      "disabled": "{color.primary.neutral|mix:40:white}"
+      "disabled": "{color.primary.neutral|mix:60:white}"
     },
     "pollyicon": {
       "color": {
@@ -136,10 +136,10 @@
     "color": {
       "pressed": "{color.secondary.purple|mix:60:black}",
       "loading": "{color.secondary.purple|mix:60:black}",
-      "disabled": "{color.primary.neutral|mix:40:white}"
+      "disabled": "{color.primary.neutral|mix:60:white}"
     },
     "boxshadow": {
-      "default": "{elevation.md}",
+      "default": "0 2px 4px 0 #00000040",
       "disabled": "none"
     },
     "pollyicon": {
@@ -180,7 +180,7 @@
       "hover": "{color.secondary.purple|mix:80:black}",
       "selected": "{color.neutral.purple|mix:60:black}",
       "active": "{color.neutral.purple|mix:60:black}",
-      "disabled": "{color.primary.neutral|mix:40:white}"
+      "disabled": "{color.primary.neutral|mix:60:white}"
     },
     "pollyicon": {
       "color": {
@@ -190,7 +190,7 @@
         "hover": "{color.secondary.purple|mix:60:black}",
         "selected": "{color.neutral.purple|mix:80:black}",
         "active": "{color.neutral.purple|mix:80:black}",
-        "disabled": "{color.primary.neutral|mix:40:white}"
+        "disabled": "{color.primary.neutral|mix:60:white}"
       }
     },
     "spliticon": {

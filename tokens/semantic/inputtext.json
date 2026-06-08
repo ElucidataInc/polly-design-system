@@ -40,7 +40,7 @@
       "color": "{color.primary.neutral|mix:60:black}"
     },
     "background": {
-      "default": "transparent",
+      "default": "{color.standard.white}",
       "disabled": "{color.primary.neutral|mix:5:white}"
     },
     "transition": "border-color 0.3s ease"

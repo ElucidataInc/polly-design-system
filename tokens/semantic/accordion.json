@@ -27,7 +27,10 @@
     "margin": {
       "bottom": "0"
     },
-    "radius": "0",
+    "radius": {
+      "default": "0",
+      "active": "0.9375rem 0.9375rem"
+    },
     "transition": "background-color 0.3s ease",
     "display": "flex",
     "alignitems": "center",
