@@ -1,6 +1,6 @@
 {
   "name": "@polly-fe/design-tokens",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Centralized design tokens for Polly applications",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
