@@ -14,6 +14,22 @@
     "inkbar": {
       "height": "2px",
       "color": "{color.primary.purple|mix:80:black}"
+    },
+    "button": {
+      "prev": {
+        "background": "linear-gradient(90deg, {color.standard.white}, {color.standard.white|mix:85:transparent} 57.5%, transparent)",
+        "width": "{spacing.6}",
+        "padding": {
+          "right": "{spacing.2}"
+        }
+      },
+      "next": {
+        "background": "linear-gradient(270deg, {color.standard.white}, {color.standard.white|mix:95:transparent} 57.5%, transparent)",
+        "width": "{spacing.6}",
+        "padding": {
+          "left": "{spacing.2}"
+        }
+      }
     }
   },
   "tab": {
@@ -106,7 +122,9 @@
     },
     "navborderbottom": {
       "list": {
-        "border": "1px solid {color.neutral.purple|mix:20:white}"
+        "border": "1px solid {color.neutral.purple|mix:20:white}",
+        "min-width": "100%",
+        "width": "max-content"
       }
     },
     "omixatlas": {
