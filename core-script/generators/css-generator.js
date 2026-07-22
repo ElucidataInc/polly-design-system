@@ -51,7 +51,7 @@ function getSanitizeCssVarName(key) {
  * generateCssVariables({ 'color.primary': '#6200ee' })
  * // => "@import url(...)\n:root {\n  --color-primary: #6200ee;\n}\n"
  */
-function generateCssVariables(resolvedTokens) {
+function generateCssBlock(resolvedTokens, selector = ':root') {
   if (!resolvedTokens || typeof resolvedTokens !== 'object') {
     throw new TypeError('resolvedTokens must be a non-null object');
   }
@@ -62,15 +62,20 @@ function generateCssVariables(resolvedTokens) {
 
   return [
     '',
-    ':root {',
+    `${selector} {`,
     declarations,
     '}',
     '',
   ].join('\n');
 }
 
+function generateCssVariables(resolvedTokens) {
+  return generateCssBlock(resolvedTokens, ':root');
+}
+
 module.exports = {
   generateCssVariables,
+  generateCssBlock, // exported for scoped theme blocks
   getSanitizeCssVarName, // exported for reuse in scss-generator
   sanitizeTokenKey, // exported for potential reuse in other generators if needed
 };

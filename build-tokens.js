@@ -10,6 +10,7 @@ const {
   displayUsageExamples,
   displayHelp,
 } = require("./helper/build-helpers");
+const { NOVO_THEME_SOURCES } = require("./tokens/theme");
 
 // Build configuration from environment and CLI
 const BUILD_CONFIG = {
@@ -62,6 +63,12 @@ const TOKEN_SOURCES = [
   { file: "tokens/semantic/chip.json", prefix: "chip" },
   { file: "tokens/semantic/checkbox.json", prefix: "checkbox" },
 ];
+
+// Theme overrides — each theme redefines only the semantic tokens it changes.
+// Anything a theme omits cascades to the :root semantic default automatically.
+// Add a new project by adding an entry here; files use the same prefixes as
+// their semantic counterparts so overrides land on the matching CSS variable.
+const THEME_SOURCES = [...NOVO_THEME_SOURCES];
 
 /**
  * Load all token files and state modifiers
@@ -132,6 +139,48 @@ function resolveTokens(allTokens, coreState) {
 }
 
 /**
+ * Resolve theme override tokens into scoped CSS blocks.
+ *
+ * Each theme is resolved against the full token set so its references
+ * (e.g. {color.primary.blue}) become var(--color-...) exactly like semantic
+ * tokens. Only the keys the theme actually overrides are emitted, so every
+ * unset token falls back to the :root default via the CSS cascade.
+ */
+function generateThemeBlocks(allTokens, coreState) {
+  if (!THEME_SOURCES.length) {
+    return "";
+  }
+
+  console.log("\n🎨 Resolving theme overrides...");
+
+  return THEME_SOURCES.map((theme) => {
+    const themeTokens = tokenUtils.loadTokens(theme.files);
+    const overrideKeys = Object.keys(themeTokens);
+
+    if (overrideKeys.length === 0) {
+      console.warn(`   ⚠️  Theme "${theme.name}" has no overrides — skipping`);
+      return "";
+    }
+
+    // Resolve overrides alongside the base tokens so references resolve,
+    // then keep only the keys this theme redefines.
+    const resolved = tokenResolverV2.resolveRefsV2(
+      { ...allTokens, ...themeTokens },
+      coreState,
+    );
+    const themeResolved = {};
+    overrideKeys.forEach((key) => {
+      themeResolved[key] = resolved[key];
+    });
+
+    console.log(
+      `   ✓ ${theme.name}: ${overrideKeys.length} overrides → ${theme.selector}`,
+    );
+    return fileGenerators.generateCssBlock(themeResolved, theme.selector);
+  }).join("\n");
+}
+
+/**
  * Minify CSS content by removing unnecessary whitespace
  */
 function minifyCss(css) {
@@ -146,10 +195,11 @@ function minifyCss(css) {
 /**
  * Generate and write output files
  */
-function generateOutputFiles(resolvedTokens) {
+function generateOutputFiles(resolvedTokens, themeBlocks = "") {
   console.log("\n📝 Generating output files...");
 
-  const cssVariables = fileGenerators.generateCssVariables(resolvedTokens);
+  const cssVariables =
+    fileGenerators.generateCssVariables(resolvedTokens) + themeBlocks;
   const files = {
     "css-variables.min.css": minifyCss(cssVariables),
     "mixins.scss": fileGenerators.generateScssHelpers(),
@@ -202,8 +252,11 @@ function buildTokens() {
     // Resolve token references
     const resolvedTokens = resolveTokens(allTokens, coreState);
 
+    // Resolve theme overrides into scoped blocks (single bundle)
+    const themeBlocks = generateThemeBlocks(allTokens, coreState);
+
     // Generate output files
-    generateOutputFiles(resolvedTokens);
+    generateOutputFiles(resolvedTokens, themeBlocks);
 
     // Display summary
     displayBuildSummary(startTime, {
