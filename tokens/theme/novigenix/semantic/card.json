@@ -1,0 +1,5 @@
+{
+  "bg": {
+    "default": "{color.secondary.purple|mix:40:white}"
+  }
+}
