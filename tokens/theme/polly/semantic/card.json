@@ -1,0 +1,54 @@
+{
+  "bg": {
+    "default": "{color.standard.white}",
+    "hover": "{color.standard.white}",
+    "active": "{color.secondary.purple|mix:10:white}"
+  },
+  "border": {
+    "default": "{color.secondary.purple|mix:30:white}",
+    "active": "{color.secondary.purple}",
+    "width": "1px",
+    "style": "solid"
+  },
+  "radius": {
+    "default": "{radius.xl}",
+    "small": "{radius.lg}",
+    "medium": "{radius.xl}",
+    "large": "{radius.2xl}"
+  },
+  "padding": {
+    "default": "0"
+  },
+  "overflow": "hidden",
+  "shadow": {
+    "hover": "0 4px 12px rgba(0, 0, 0, 0.1)",
+    "active": "none"
+  },
+  "transition": {
+    "boxshadow": "box-shadow 0.3s ease"
+  },
+  "state": {
+    "hover": {
+      "border": "{color.secondary.purple|mix:30:white}"
+    },
+    "active": {
+      "bg": "{color.secondary.purple|mix:10:white}"
+    },
+    "focus": {
+      "outline": {
+        "color": "{color.standard.black}",
+        "width": "1px",
+        "style": "solid",
+        "offset": "1px"
+      }
+    }
+  },
+  "variant": {
+    "material": {
+      "border": "0"
+    },
+    "flat": {
+      "borderactive": "1px solid {color.secondary.purple|mix:25:white}"
+    }
+  }
+}

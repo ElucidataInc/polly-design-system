@@ -19,11 +19,16 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./style": "./dist/css-variables.min.css",
     "./scss": "./dist/mixins.scss",
-    "./tokens": "./dist/tokens.json"
+    "./tokens": "./dist/tokens.json",
+    "./themes/*": "./dist/themes/*.min.css",
+    "./themes/*.json": "./dist/themes/*.tokens.json",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
   },
   "style": "./dist/css-variables.min.css",
   "sass": "./dist/mixins.scss",

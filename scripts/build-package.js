@@ -32,65 +32,74 @@ filesToCopy.forEach(({ src, dest }) => {
 // Load and consolidate all tokens
 const tokenUtils = require('../core-script/token-utils');
 const tokenResolverV2 = require('../core-script/token-resolver-v2');
+const { NOVO_THEME_SOURCES, POLLY_THEME_SOURCES } = require('../tokens/theme');
 
+// Base export mirrors the :root layer: core tokens only. Semantic tokens live
+// per-theme and are written as separate JSON files below.
 const TOKEN_SOURCES = [
-  // Core tokens
   { file: 'tokens/core/color.json', prefix: 'color' },
   { file: 'tokens/core/spacing.json', prefix: 'spacing' },
   { file: 'tokens/core/radius.json', prefix: 'radius' },
   { file: 'tokens/core/font.json', prefix: 'font' },
   { file: 'tokens/core/elevation.json', prefix: 'elevation' },
-
-  // Semantic tokens
-  { file: 'tokens/semantic/color.json', prefix: 'semantic.color' },
-  { file: 'tokens/semantic/layout.json', prefix: 'semantic.layout' },
-  { file: 'tokens/semantic/button.json', prefix: 'button' },
-  { file: 'tokens/semantic/card.json', prefix: 'card' },
-  { file: 'tokens/semantic/tabs.json', prefix: 'tabs' },
-  { file: 'tokens/semantic/accordion.json', prefix: 'accordion' },
-  { file: 'tokens/semantic/select.json', prefix: 'select' },
-  { file: 'tokens/semantic/toggleswitch.json', prefix: 'toggleswitch' },
-  { file: 'tokens/semantic/popover.json', prefix: 'popover' },
-  { file: 'tokens/semantic/toast.json', prefix: 'toast' },
-  { file: 'tokens/semantic/badge.json', prefix: 'badge' },
-  { file: 'tokens/semantic/radiobutton.json', prefix: 'radiobutton' },
-  { file: 'tokens/semantic/inputtext.json', prefix: 'inputtext' },
-  { file: 'tokens/semantic/datepicker.json', prefix: 'datepicker' },
-  { file: 'tokens/semantic/tooltip.json', prefix: 'tooltip' },
-  { file: 'tokens/semantic/table.json', prefix: 'table' },
-  { file: 'tokens/semantic/autocomplete.json', prefix: 'autocomplete' },
-  { file: 'tokens/semantic/progressbar.json', prefix: 'progressbar' },
-  { file: 'tokens/semantic/skeleton.json', prefix: 'skeleton' },
-  { file: 'tokens/semantic/avatar.json', prefix: 'avatar' },
-  { file: 'tokens/semantic/panel.json', prefix: 'panel' },
-  { file: 'tokens/semantic/dialog.json', prefix: 'dialog' },
-  { file: 'tokens/semantic/confirmdialog.json', prefix: 'confirmdialog' },
-  { file: 'tokens/semantic/progressspinner.json', prefix: 'progressspinner' },
-  { file: 'tokens/semantic/password.json', prefix: 'password' },
-  { file: 'tokens/semantic/textarea.json', prefix: 'textarea' },
-  { file: 'tokens/semantic/picklist.json', prefix: 'picklist' },
-  { file: 'tokens/semantic/listbox.json', prefix: 'listbox' },
-  { file: 'tokens/semantic/carousel.json', prefix: 'carousel' },
-  { file: 'tokens/semantic/stepper.json', prefix: 'stepper' },
-  { file: 'tokens/semantic/chip.json', prefix: 'chip' },
 ];
+
+// Client themes carry the semantic tokens. Each is emitted as its own resolved
+// JSON alongside the theme CSS so JS/TS consumers can read semantic tokens.
+const CLIENT_THEMES = [...NOVO_THEME_SOURCES, ...POLLY_THEME_SOURCES];
 
 try {
   // Load all tokens
   process.chdir(PROJECT_ROOT);
   const allTokens = tokenUtils.loadTokens(TOKEN_SOURCES);
   const coreState = tokenUtils.loadJSON('tokens/core/state.json');
-  
+
   // Resolve tokens
   const resolvedTokens = tokenResolverV2.resolveRefsV2(allTokens, coreState);
-  
-  // Write tokens as JSON
+
+  // Write base tokens as JSON (core only)
   fs.writeFileSync(
     path.join(BUILD_DIR, 'tokens.json'),
     JSON.stringify(resolvedTokens, null, 2)
   );
   console.log('   ✓ Created tokens.json');
-  
+
+  // Write one resolved JSON per client theme (semantic tokens only),
+  // mirroring dist/themes/<name>.min.css.
+  const themesDir = path.join(BUILD_DIR, 'themes');
+  if (!fs.existsSync(themesDir)) {
+    fs.mkdirSync(themesDir, { recursive: true });
+  }
+
+  CLIENT_THEMES.forEach((theme) => {
+    const themeTokens = tokenUtils.loadTokens(theme.files);
+    const overrideKeys = Object.keys(themeTokens);
+
+    if (overrideKeys.length === 0) {
+      console.warn(`   ⚠️  Theme "${theme.name}" has no tokens — skipping JSON`);
+      return;
+    }
+
+    // Resolve overrides against the base tokens so references resolve, then
+    // keep only the keys this theme defines.
+    const resolved = tokenResolverV2.resolveRefsV2(
+      { ...allTokens, ...themeTokens },
+      coreState
+    );
+    const themeResolved = {};
+    overrideKeys.forEach((key) => {
+      themeResolved[key] = resolved[key];
+    });
+
+    fs.writeFileSync(
+      path.join(themesDir, `${theme.name}.tokens.json`),
+      JSON.stringify(themeResolved, null, 2)
+    );
+    console.log(
+      `   ✓ Created themes/${theme.name}.tokens.json (${overrideKeys.length} tokens)`
+    );
+  });
+
 } catch (error) {
   console.error('   ❌ Error processing tokens:', error.message);
   process.exit(1);

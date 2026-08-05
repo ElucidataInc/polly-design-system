@@ -1,0 +1,14 @@
+{
+  "base": {
+    "transition": "width 0.3s ease-out",
+    "border": "1px solid {color.primary.neutral|mix:60:white}",
+    "borderradius": "0.25rem",
+    "color": "{color.primary.neutral|mix:60:black}",
+    "height": "2.5rem",
+    "padding": "0.625rem 0.75rem",
+    "placeholder": {
+      "color": "{color.primary.neutral|mix:60:white}",
+      "opacity": "0.5"
+    }
+  }
+}
