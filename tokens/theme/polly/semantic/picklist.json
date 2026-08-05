@@ -1,0 +1,42 @@
+{
+  "container": {
+    "gap": "0.5rem",
+    "height": "fit-content"
+  },
+  "controls": {
+    "gap": "0.5rem"
+  },
+  "button": {
+    "fontsize": "1rem",
+    "padding": "0.25rem",
+    "width": "1.5rem",
+    "height": "1.5rem",
+    "borderradius": "50%",
+    "border": "none",
+    "background": {
+      "default": "{color.standard.white}",
+      "hover": "{color.neutral.purple|mix:10:white}",
+      "active": "{color.neutral.purple|mix:10:white}"
+    },
+    "color": {
+      "default": "{color.primary.neutral|mix:90:white}",
+      "active": "{color.neutral.purple|mix:80:black}"
+    }
+  },
+  "transfercontrols": {
+    "display": "flex",
+    "flexdirection": "column",
+    "movealltosource": {
+      "order": "1"
+    },
+    "movetosource": {
+      "order": "2"
+    },
+    "movetotarget": {
+      "order": "3"
+    },
+    "movealltotarget": {
+      "order": "4"
+    }
+  }
+}

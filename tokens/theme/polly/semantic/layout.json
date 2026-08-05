@@ -1,0 +1,18 @@
+{
+  "spacing": {
+    "component": "{spacing.4}",
+    "section": "{spacing.8}",
+    "page": "{spacing.12}"
+  },
+  "radius": {
+    "button": "{radius.lg}",
+    "card": "{radius.xl}",
+    "input": "{radius.md}"
+  },
+  "elevation": {
+    "button": "{elevation.sm}",
+    "card": "{elevation.md}",
+    "modal": "{elevation.lg}",
+    "tooltip": "{elevation.md}"
+  }
+}

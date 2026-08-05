@@ -1,0 +1,88 @@
+{
+  "base": {
+    "background": "transparent",
+    "height": "1rem",
+    "width": "2rem",
+    "position": "relative",
+    "display": "flex",
+    "alignitems": "center"
+  },
+  "slider": {
+    "background": {
+      "off": "{color.primary.neutral|mix:20:white}",
+      "on": "{color.neutral.purple|mix:40:white}",
+      "onhover": "{color.secondary.purple|mix:40:white}"
+    },
+    "border": {
+      "width": "0.1rem",
+      "style": "solid",
+      "color": {
+        "off": "{color.primary.neutral|mix:20:white}",
+        "on": "{color.neutral.purple|mix:40:white}"
+      }
+    },
+    "borderradius": "30px",
+    "height": "100%",
+    "width": "100%",
+    "position": "relative",
+    "transition": "all 0.3s"
+  },
+  "handle": {
+    "background": {
+      "off": "{color.standard.white}",
+      "on": "{color.secondary.purple}"
+    },
+    "borderradius": "50%",
+    "height": "1.25rem",
+    "width": "1.25rem",
+    "position": "absolute",
+    "left": "-10%",
+    "top": "-25%",
+    "transition": "0.3s",
+    "translatex": {
+      "on": "1rem"
+    },
+    "shadow": "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 2px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14)"
+  },
+  "outline": {
+    "style": "solid",
+    "color": {
+      "focus": "{color.neutral.purple|alpha:0.1}",
+      "hover": "{color.neutral.purple|alpha:0.1}"
+    }
+  },
+  "hover": {
+    "off": {
+      "handle": {
+        "outline": "0.5rem solid {color.neutral.purple|alpha:0.1}"
+      }
+    }
+  },
+  "focus": {
+    "handle": {
+      "outline": "0.5rem solid {color.neutral.purple|alpha:0.1}"
+    }
+  },
+  "active": {
+    "handle": {
+      "boxshadow": "0 0 0 0.5rem {color.neutral.purple|alpha:0.25}",
+      "outline": "0.5rem solid {color.neutral.purple|alpha:0.25}"
+    }
+  },
+  "disabled": {
+    "opacity": "0.4",
+    "handle": {
+      "background": "{color.primary.neutral|mix:80:white}",
+      "opacity": "1"
+    }
+  },
+  "medium": {
+    "outline": {
+      "width": "0.3rem"
+    },
+    "active": {
+      "boxshadow": "0 0 0 0.3rem {color.neutral.purple|alpha:0.25}",
+      "outline": "0.3rem solid {color.neutral.purple|alpha:0.25}"
+    }
+  }
+}

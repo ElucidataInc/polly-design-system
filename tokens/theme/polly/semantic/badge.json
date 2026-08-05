@@ -1,0 +1,30 @@
+{
+  "base": {
+    "background": "{color.secondary.purple|mix:80:black}",
+    "color": "{color.standard.white}",
+    "borderradius": "6.25rem",
+    "fontsize": "{font.size.label.micro}",
+    "fontweight": "{font.weight.normal}",
+    "lineheight": "0.5rem",
+    "padding": "0.0625rem 0.125rem",
+    "minwidth": "0.8125rem",
+    "height": "0.8125rem",
+    "display": "inline-flex",
+    "alignitems": "center",
+    "justifycontent": "center",
+    "textalign": "center"
+  },
+  "small": {
+    "fontsize": "0.5rem",
+    "lineheight": "0.4rem",
+    "minwidth": "0.625rem",
+    "height": "0.625rem"
+  },
+  "sidebar": {
+    "background": "{color.primary.pink}",
+    "color": "{color.primary.pink|mix:2:white}"
+  },
+  "circle": {
+    "padding": "0"
+  }
+}

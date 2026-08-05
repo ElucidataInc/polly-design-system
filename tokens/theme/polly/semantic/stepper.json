@@ -1,0 +1,98 @@
+{
+  "transition-duration": "0.3s ease",
+
+  "steplist": {
+    "minheight": "{spacing.16}"
+  },
+
+  "step": {
+    "gap": "{spacing.4}",
+    "padding": "{spacing.0}",
+
+    "header": {
+      "border": "none",
+      "display": "flex",
+      "alignitems": "center",
+      "textdecoration": "none",
+      "cursor": "pointer",
+      "borderradius": "{radius.none}",
+      "outlinecolor": "transparent",
+      "background": "transparent",
+      "padding": "{spacing.0}",
+      "gap": "{spacing.0}",
+      "flexdirection": "column"
+    },
+
+    "number": {
+      "display": "flex",
+      "alignitems": "center",
+      "justifycontent": "center",
+      "minwidth": "1.5rem",
+      "height": "1.5rem",
+      "borderradius": "{radius.full}",
+
+      "background": {
+        "default": "{color.primary.neutral|mix:30:white}",
+        "active": "{color.primary.purple}",
+        "completed": "{color.primary.purple}"
+      },
+
+      "color": {
+        "default": "{color.primary.neutral|mix:80:black}",
+        "active": "{color.standard.white}",
+        "completed": "{color.standard.white}"
+      },
+
+      "bordercolor": {
+        "default": "transparent",
+        "active": "{color.primary.purple}",
+        "completed": "{color.primary.purple}"
+      },
+
+      "shadow": {
+        "active": "0 0 0 4px {color.primary.purple|mix:20:white}",
+        "completed": "0 0 0 4px {color.primary.purple|mix:20:white}"
+      }
+    },
+
+    "title": {
+      "maxwidth": "100%",
+      "margin": "{spacing.1} 0",
+
+      "color": {
+        "default": "{color.primary.neutral|mix:60:black}",
+        "active": "{color.primary.purple|mix:80:black}",
+        "completed": "{color.primary.purple|mix:80:black}"
+      }
+    }
+  },
+
+  "separator": {
+    "flex": "1 1 0",
+    "height": "2px",
+    "left": "2rem",
+    "position": "absolute",
+    "right": "-50%",
+    "top": "0.75rem",
+    "translatey": "-50%",
+
+    "background": {
+      "default": "{color.primary.neutral|mix:30:white}",
+      "active": "{color.primary.purple}",
+      "completed": "{color.primary.purple}"
+    }
+  },
+
+  "steppanel": {
+    "background": "{color.standard.white}",
+    "color": "{color.primary.neutral|mix:60:black}",
+
+    "separator": {
+      "display": "none"
+    }
+  },
+
+  "steppanels": {
+    "padding": "{spacing.4}"
+  }
+}

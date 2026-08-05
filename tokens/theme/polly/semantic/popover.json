@@ -1,0 +1,41 @@
+{
+  "base": {
+    "background": "{color.standard.white}",
+    "border": "0",
+    "borderradius": "0.5rem",
+    "padding": "0.5rem 0",
+    "shadow": "0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08)",
+    "color": "{color.primary.neutral|mix:60:black}",
+    "margintop": "0.5rem"
+  },
+  "selector": {
+    "borderwidth": "0",
+    "marginleft": "0",
+    "borderbottomcolor": "transparent",
+    "left": "0"
+  },
+  "content": {
+    "padding": "0"
+  },
+  "nopadding": {
+    "padding": "0"
+  },
+  "modal": {
+    "background": "{color.standard.white}",
+    "borderradius": "0.75rem",
+    "padding": "0 0 0.5rem 0",
+    "shadow": "0px 4px 32px 6px rgba(0, 0, 0, 0.12)",
+    "maxheight": "100%",
+    "overflow": "hidden"
+  },
+  "filteroverlay": {
+    "margintop": "0"
+  },
+  "sidenav": {
+    "transform": {
+      "default": "translate(4.2rem, -2.9rem)",
+      "notification": "translate(4.2rem, -3.125rem)",
+      "useroptions": "translate(4.2rem, 2.4rem)"
+    }
+  }
+}

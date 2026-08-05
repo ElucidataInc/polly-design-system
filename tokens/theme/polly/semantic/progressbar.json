@@ -1,0 +1,22 @@
+{
+  "container": {
+    "background": {
+      "default": "{color.primary.neutral|mix:15:white}"
+    },
+    "borderradius": "0.1875rem",
+    "border": "0 none",
+    "height": {
+      "default": "1.125rem",
+      "small": "0.3125rem"
+    }
+  },
+  "value": {
+    "background": {
+      "default": "linear-gradient(270deg, #7235BE 0%, #D2B3F8 100%)",
+      "success": "linear-gradient(270deg, #24CF35 0%, #A7ECAE 100%)",
+      "running": "linear-gradient(270deg, #7235BE 0%, #D2B3F8 100%)",
+      "preprocessing": "linear-gradient(270deg, #3C5DE2 0%, #B1BEF3 100%)",
+      "danger": "linear-gradient(270deg, #E50045 0%, #FF80A6 100%)"
+    }
+  }
+}

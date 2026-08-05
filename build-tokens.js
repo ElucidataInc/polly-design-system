@@ -10,7 +10,7 @@ const {
   displayUsageExamples,
   displayHelp,
 } = require("./helper/build-helpers");
-const { NOVO_THEME_SOURCES } = require("./tokens/theme");
+const { NOVO_THEME_SOURCES, POLLY_THEME_SOURCES } = require("./tokens/theme");
 
 // Build configuration from environment and CLI
 const BUILD_CONFIG = {
@@ -20,55 +20,24 @@ const BUILD_CONFIG = {
   sortTokens: true,
 };
 
-// Token source definitions
-const TOKEN_SOURCES = [
-  // Core tokens
+// Core tokens resolve to raw values and form the base layer.
+const CORE_SOURCES = [
   { file: "tokens/core/color.json", prefix: "color" },
   { file: "tokens/core/spacing.json", prefix: "spacing" },
   { file: "tokens/core/radius.json", prefix: "radius" },
   { file: "tokens/core/font.json", prefix: "font" },
   { file: "tokens/core/elevation.json", prefix: "elevation" },
-
-  // Semantic tokens
-  { file: "tokens/semantic/color.json", prefix: "semantic.color" },
-  { file: "tokens/semantic/layout.json", prefix: "semantic.layout" },
-  { file: "tokens/semantic/button.json", prefix: "button" },
-  { file: "tokens/semantic/card.json", prefix: "card" },
-  { file: "tokens/semantic/tabs.json", prefix: "tabs" },
-  { file: "tokens/semantic/accordion.json", prefix: "accordion" },
-  { file: "tokens/semantic/select.json", prefix: "select" },
-  { file: "tokens/semantic/toggleswitch.json", prefix: "toggleswitch" },
-  { file: "tokens/semantic/popover.json", prefix: "popover" },
-  { file: "tokens/semantic/toast.json", prefix: "toast" },
-  { file: "tokens/semantic/badge.json", prefix: "badge" },
-  { file: "tokens/semantic/radiobutton.json", prefix: "radiobutton" },
-  { file: "tokens/semantic/inputtext.json", prefix: "inputtext" },
-  { file: "tokens/semantic/datepicker.json", prefix: "datepicker" },
-  { file: "tokens/semantic/tooltip.json", prefix: "tooltip" },
-  { file: "tokens/semantic/table.json", prefix: "table" },
-  { file: "tokens/semantic/autocomplete.json", prefix: "autocomplete" },
-  { file: "tokens/semantic/progressbar.json", prefix: "progressbar" },
-  { file: "tokens/semantic/skeleton.json", prefix: "skeleton" },
-  { file: "tokens/semantic/avatar.json", prefix: "avatar" },
-  { file: "tokens/semantic/panel.json", prefix: "panel" },
-  { file: "tokens/semantic/dialog.json", prefix: "dialog" },
-  { file: "tokens/semantic/confirmdialog.json", prefix: "confirmdialog" },
-  { file: "tokens/semantic/progressspinner.json", prefix: "progressspinner" },
-  { file: "tokens/semantic/password.json", prefix: "password" },
-  { file: "tokens/semantic/textarea.json", prefix: "textarea" },
-  { file: "tokens/semantic/picklist.json", prefix: "picklist" },
-  { file: "tokens/semantic/listbox.json", prefix: "listbox" },
-  { file: "tokens/semantic/carousel.json", prefix: "carousel" },
-  { file: "tokens/semantic/stepper.json", prefix: "stepper" },
-  { file: "tokens/semantic/chip.json", prefix: "chip" },
-  { file: "tokens/semantic/checkbox.json", prefix: "checkbox" },
 ];
 
-// Theme overrides — each theme redefines only the semantic tokens it changes.
-// Anything a theme omits cascades to the :root semantic default automatically.
-// Add a new project by adding an entry here; files use the same prefixes as
-// their semantic counterparts so overrides land on the matching CSS variable.
-const THEME_SOURCES = [...NOVO_THEME_SOURCES];
+
+// The :root base = core raw values + semantic (Polly) defaults.
+const TOKEN_SOURCES = [...CORE_SOURCES];
+
+// Client themes = thin overrides layered on top of the Polly defaults. Each is
+// emitted to its own dist/themes/<name>.min.css scoped to [data-theme~="<name>"],
+// containing ONLY the tokens that client changes; everything else falls through
+// to :root via the CSS cascade. Add a new client by adding a theme source here.
+const CLIENT_THEMES = [...NOVO_THEME_SOURCES , ...POLLY_THEME_SOURCES];
 
 /**
  * Load all token files and state modifiers
@@ -139,31 +108,35 @@ function resolveTokens(allTokens, coreState) {
 }
 
 /**
- * Resolve theme override tokens into scoped CSS blocks.
+ * Resolve each client theme into its own minified CSS file.
  *
- * Each theme is resolved against the full token set so its references
- * (e.g. {color.primary.blue}) become var(--color-...) exactly like semantic
- * tokens. Only the keys the theme actually overrides are emitted, so every
- * unset token falls back to the :root default via the CSS cascade.
+ * A client theme is resolved against the full base token set so its references
+ * (e.g. {color.primary.blue}) become var(--color-...) exactly like Polly's
+ * tokens. Only the keys the client actually overrides are emitted, scoped to
+ * [data-theme~="<name>"], so every unset token falls through to the Polly
+ * default in :root via the CSS cascade.
+ *
+ * @returns {Record<string, string>} map of `themes/<name>.css` => minified CSS
  */
-function generateThemeBlocks(allTokens, coreState) {
-  if (!THEME_SOURCES.length) {
-    return "";
+function generateClientThemes(allTokens, coreState) {
+  if (!CLIENT_THEMES.length) {
+    return {};
   }
 
-  console.log("\n🎨 Resolving theme overrides...");
+  console.log("\n🎨 Resolving client theme overrides...");
+  const files = {};
 
-  return THEME_SOURCES.map((theme) => {
+  CLIENT_THEMES.forEach((theme) => {
     const themeTokens = tokenUtils.loadTokens(theme.files);
     const overrideKeys = Object.keys(themeTokens);
 
     if (overrideKeys.length === 0) {
       console.warn(`   ⚠️  Theme "${theme.name}" has no overrides — skipping`);
-      return "";
+      return;
     }
 
     // Resolve overrides alongside the base tokens so references resolve,
-    // then keep only the keys this theme redefines.
+    // then keep only the keys this client redefines.
     const resolved = tokenResolverV2.resolveRefsV2(
       { ...allTokens, ...themeTokens },
       coreState,
@@ -173,11 +146,18 @@ function generateThemeBlocks(allTokens, coreState) {
       themeResolved[key] = resolved[key];
     });
 
-    console.log(
-      `   ✓ ${theme.name}: ${overrideKeys.length} overrides → ${theme.selector}`,
+    // Word-match selector so themes can be combined, e.g. data-theme="acme rtl".
+    const selector = `[data-theme~="${theme.name}"]`;
+    files[`themes/${theme.name}.min.css`] = minifyCss(
+      fileGenerators.generateCssBlock(themeResolved, selector),
     );
-    return fileGenerators.generateCssBlock(themeResolved, theme.selector);
-  }).join("\n");
+
+    console.log(
+      `   ✓ ${theme.name}: ${overrideKeys.length} overrides → dist/themes/${theme.name}.min.css  ${selector}`,
+    );
+  });
+
+  return files;
 }
 
 /**
@@ -195,14 +175,17 @@ function minifyCss(css) {
 /**
  * Generate and write output files
  */
-function generateOutputFiles(resolvedTokens, themeBlocks = "") {
+function generateOutputFiles(resolvedTokens, clientThemeFiles = {}) {
   console.log("\n📝 Generating output files...");
 
-  const cssVariables =
-    fileGenerators.generateCssVariables(resolvedTokens) + themeBlocks;
+  // Base bundle: :root with core raw values + Polly defaults. Import this
+  // everywhere — on its own it gives the default Polly look, no attribute needed.
+  const cssVariables = fileGenerators.generateCssVariables(resolvedTokens);
   const files = {
     "css-variables.min.css": minifyCss(cssVariables),
     "mixins.scss": fileGenerators.generateScssHelpers(),
+    // One file per client; loaded alongside the base bundle.
+    ...clientThemeFiles,
   };
 
   const buildDir = resolve(__dirname, "dist");
@@ -252,11 +235,11 @@ function buildTokens() {
     // Resolve token references
     const resolvedTokens = resolveTokens(allTokens, coreState);
 
-    // Resolve theme overrides into scoped blocks (single bundle)
-    const themeBlocks = generateThemeBlocks(allTokens, coreState);
+    // Resolve each client theme into its own dist/themes/<name>.min.css
+    const clientThemeFiles = generateClientThemes(allTokens, coreState);
 
     // Generate output files
-    generateOutputFiles(resolvedTokens, themeBlocks);
+    generateOutputFiles(resolvedTokens, clientThemeFiles);
 
     // Display summary
     displayBuildSummary(startTime, {

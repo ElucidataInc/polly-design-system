@@ -1,0 +1,48 @@
+{
+  "base": {
+    "borderradius": "1.5rem",
+    "padding": "0.5rem 0.75rem",
+    "gap": "0.5rem",
+    "transition": "all 0.2s ease-in-out"
+  },
+  "filled": {
+    "primary": {
+      "backgroundcolor": {
+        "default": "{color.primary.purple|mix:10:white}",
+        "hover": "{color.primary.purple|mix:20:white}",
+        "active": "{color.primary.purple|mix:40:white}",
+        "disabled": "{color.standard.white}",
+        "error": "{color.standard.white}",
+        "focused": "{color.primary.purple|mix:10:white}"
+      },
+      "color": {
+        "default": "{color.primary.purple|mix:70:black}",
+        "hover": "{color.primary.purple|mix:60:black}",
+        "active": "{color.secondary.purple|mix:40:black}",
+        "disabled": "{color.primary.neutral|mix:60:white}",
+        "error": "{color.primary.red|mix:60:black}",
+        "focused": "{color.primary.purple|mix:70:black}"
+      },
+      "border": {
+        "default": "1px solid {color.primary.purple|mix:20:white}",
+        "hover": "1px solid {color.primary.purple|mix:30:white}",
+        "active": "1px solid {color.primary.purple|mix:50:white}",
+        "disabled": "1px solid {color.primary.neutral|mix:60:white}",
+        "error": "1px solid {color.primary.red|mix:60:black}",
+        "focused": "1px solid {color.standard.white}"
+      }
+    }
+  },
+  "focus": {
+    "outline": "2px solid {color.primary.purple}",
+    "outlineoffset": "2px"
+  },
+  "icon": {
+    "size": "1rem",
+    "color": "inherit"
+  },
+  "label": {
+    "overflowwrap": "break-word",
+    "wordbreak": "break-word"
+  }
+}
