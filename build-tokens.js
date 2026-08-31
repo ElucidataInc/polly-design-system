@@ -61,6 +61,7 @@ const TOKEN_SOURCES = [
   { file: "tokens/semantic/stepper.json", prefix: "stepper" },
   { file: "tokens/semantic/chip.json", prefix: "chip" },
   { file: "tokens/semantic/checkbox.json", prefix: "checkbox" },
+  { file: "tokens/semantic/paginator.json", prefix: "paginator" },
 ];
 
 /**
