@@ -25,6 +25,7 @@
     "./style": "./dist/css-variables.min.css",
     "./scss": "./dist/mixins.scss",
     "./tokens": "./dist/tokens.json",
+    "./themes": "./dist/themes/index.min.css",
     "./themes/*": "./dist/themes/*.min.css",
     "./themes/*.json": "./dist/themes/*.tokens.json",
     "./dist/*": "./dist/*",

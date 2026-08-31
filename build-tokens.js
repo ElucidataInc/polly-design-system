@@ -146,8 +146,7 @@ function generateClientThemes(allTokens, coreState) {
       themeResolved[key] = resolved[key];
     });
 
-    // Word-match selector so themes can be combined, e.g. data-theme="acme rtl".
-    const selector = `[data-theme~="${theme.name}"]`;
+    const selector = `[data-theme="${theme.name}"]`;
     files[`themes/${theme.name}.min.css`] = minifyCss(
       fileGenerators.generateCssBlock(themeResolved, selector),
     );
@@ -178,14 +177,24 @@ function minifyCss(css) {
 function generateOutputFiles(resolvedTokens, clientThemeFiles = {}) {
   console.log("\n📝 Generating output files...");
 
-  // Base bundle: :root with core raw values + Polly defaults. Import this
-  // everywhere — on its own it gives the default Polly look, no attribute needed.
+  // Base bundle: :root with core raw values.
   const cssVariables = fileGenerators.generateCssVariables(resolvedTokens);
+
+  // Barrel: a single file that @imports every per-theme CSS. Consumers load
+  // just this one file (dist/themes/index.min.css); adding a new theme adds an
+  // @import here automatically on the next build, so their config never changes.
+  // The bundler inlines these relative @imports at build time.
+  const themeBarrel = Object.keys(clientThemeFiles)
+    .map((key) => `@import url("./${key.split("/").pop()}");`)
+    .join("\n");
+
   const files = {
     "css-variables.min.css": minifyCss(cssVariables),
     "mixins.scss": fileGenerators.generateScssHelpers(),
-    // One file per client; loaded alongside the base bundle.
+    // One file per client...
     ...clientThemeFiles,
+    // ...plus the barrel that pulls them all in.
+    ...(themeBarrel ? { "themes/index.min.css": themeBarrel } : {}),
   };
 
   const buildDir = resolve(__dirname, "dist");
